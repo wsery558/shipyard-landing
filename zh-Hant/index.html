@@ -1,1 +1,126 @@
 
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 讓 AI 改動變得敢上線</title>
+  <meta name="description" content="交付治理層：Plan → Execute → Verify → Evidence → Release。" />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="alternate" hreflang="en" href="https://shipyard.tsaielectro.com/en/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://shipyard.tsaielectro.com/zh-Hant/" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Shipyard</span>
+        <span class="badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="#demo">Demo</a>
+        <a href="#compare">Community vs Pro</a>
+        <a href="#waitlist">候補名單</a>
+        <a href="#call">預約通話</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="lang">
+            <a href="/en/">EN</a>
+            <a class="active" href="/zh-Hant/">中文</a>
+          </div>
+
+          <h1 class="h1">Shipyard 讓 AI 改動變得敢上線。</h1>
+          <p class="sub">把 Plan → Execute → Verify → Evidence → Release 串成一條可重現、可驗收、可追溯的交付流程。</p>
+
+          <div class="cta">
+            <a class="btn primary" href="YOUR_GITHUB_QUICKSTART_URL" target="_blank" rel="noreferrer">跑一次 Quickstart（30 分鐘）</a>
+            <a class="btn" href="#waitlist">加入候補名單</a>
+          </div>
+          <div class="small">我們只說能用客觀證據支撐的事。</div>
+
+          <div class="proofs">
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s build</code>
+              <div class="small">UI dist 可被 serve</div>
+            </div>
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s start</code>
+              <div class="small">UI 可打開</div>
+            </div>
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s test:smoke</code>
+              <div class="small">/health /api/state /api/projects</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div id="demo" class="section">
+            <div class="h2">可重現 Demo（本地）</div>
+            <p class="sub" style="margin-top:6px;">smoke 沒綠燈，就不算「已交付」。</p>
+            <div class="embed">
+              <img src="/assets/demo.gif" alt="Shipyard demo" style="width:100%; display:block;" />
+            </div>
+            <div class="small" style="margin-top:8px;">終端 → UI → curl 一次看懂。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="compare" class="section">
+      <div class="h2">Community vs Pro</div>
+      <div class="grid2">
+        <div class="card">
+          <b>Community（open-core，可公開驗證）</b>
+          <ul class="list">
+            <li>Local-first quickstart</li>
+            <li>build / start / smoke 可重現</li>
+            <li>OSS hygiene：MIT、SECURITY、CONTRIBUTING、CI</li>
+            <li>付費端點回 <code>501</code> 是設計邊界（不是 bug）</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Pro（以 Release Gate 為準，不超賣）</b>
+          <ul class="list">
+            <li>✅ install/lint/typecheck/build/smoke</li>
+            <li>⛔ unit tests 尚未全綠（例：activityLog BASE_DIR）</li>
+            <li>🟡 Activity log 治理與 UI 接線收斂中</li>
+            <li>🟡 Spec Vault apply 需要 dedicated smoke</li>
+            <li>🟡 git status clean 才能 tag/release</li>
+          </ul>
+          <div class="small" style="margin-top:8px;">只要 Gate 沒全綠，就不把能力寫成「已具備」。</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="waitlist" class="section">
+      <div class="h2">加入候補名單</div>
+      <div class="sub" style="margin-top:6px;">你最需要的是：證據匯出、稽核留存、團隊治理、還是成本上限？</div>
+      <div class="embed">
+        <iframe src="YOUR_TALLY_EMBED_URL" style="width:100%; height:520px; border:0;" title="Shipyard waitlist"></iframe>
+      </div>
+    </div>
+
+    <div id="call" class="section">
+      <div class="h2">預約通話（團隊 / 顧問）</div>
+      <div class="sub" style="margin-top:6px;">15 分鐘確認是否適合你的交付流程。</div>
+      <a class="btn primary" href="YOUR_BOOK_A_CALL_URL" target="_blank" rel="noreferrer">預約通話</a>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="footer">
+      <div>© Shipyard · by Engineer Tsai Labs</div>
+      <div class="small"><a href="YOUR_GITHUB_REPO_URL" target="_blank" rel="noreferrer">GitHub</a></div>
+    </div>
+  </div>
+</body>
+</html>
