@@ -1,1 +1,128 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Make AI changes shippable</title>
+  <meta name="description" content="Delivery governance layer: Plan → Execute → Verify → Evidence → Release." />
+  <link rel="stylesheet" href="/assets/style.css" />
+  <link rel="alternate" hreflang="en" href="https://shipyard.tsaielectro.com/en/" />
+  <link rel="alternate" hreflang="zh-Hant" href="https://shipyard.tsaielectro.com/zh-Hant/" />
+</head>
+<body>
+  <div class="container">
+    <div class="topbar">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Shipyard</span>
+        <span class="badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="#demo">Demo</a>
+        <a href="#compare">Community vs Pro</a>
+        <a href="#waitlist">Waitlist</a>
+        <a href="#call">Book a call</a>
+      </div>
+    </div>
+
+    <div class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="lang">
+            <a class="active" href="/en/">EN</a>
+            <a href="/zh-Hant/">中文</a>
+          </div>
+
+          <h1 class="h1">Shipyard makes AI changes shippable.</h1>
+          <p class="sub">A delivery governance layer that turns Plan → Execute → Verify → Evidence → Release into a reproducible pipeline you can trust.</p>
+
+          <div class="cta">
+            <a class="btn primary" href="YOUR_GITHUB_QUICKSTART_URL" target="_blank" rel="noreferrer">Run the Quickstart (30 min)</a>
+            <a class="btn" href="#waitlist">Join Waitlist</a>
+          </div>
+          <div class="small">We only claim what we can prove with reproducible commands.</div>
+
+          <div class="proofs">
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s build</code>
+              <div class="small">UI dist produced & served</div>
+            </div>
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s start</code>
+              <div class="small">UI reachable locally</div>
+            </div>
+            <div class="card">
+              <b><span class="tag-ok">✅</span> Proof</b>
+              <code>pnpm -s test:smoke</code>
+              <div class="small">/health /api/state /api/projects</div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div id="demo" class="section">
+            <div class="h2">Reproducible demo (local)</div>
+            <p class="sub" style="margin-top:6px;">If smoke isn’t green, we don’t call it shipped.</p>
+            <div class="embed">
+              <!-- Put your demo.gif or demo.mp4 under /assets/ and update the src below -->
+              <img src="/assets/demo.gif" alt="Shipyard demo" style="width:100%; display:block;" />
+            </div>
+            <div class="small" style="margin-top:8px;">Terminal → UI → curl proof in one shot.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="compare" class="section">
+      <div class="h2">Community vs Pro</div>
+      <div class="grid2">
+        <div class="card">
+          <b>Community (open-core, provable today)</b>
+          <ul class="list">
+            <li>Local-first quickstart</li>
+            <li>Reproducible: build / start / smoke</li>
+            <li>OSS hygiene: MIT, SECURITY, CONTRIBUTING, CI</li>
+            <li>Paid endpoints return <code>501</code> by design (boundary, not a bug)</li>
+          </ul>
+        </div>
+        <div class="card">
+          <b>Pro (Release Gate based — no over-selling)</b>
+          <ul class="list">
+            <li>✅ install/lint/typecheck/build/smoke</li>
+            <li>⛔ unit tests not fully green (e.g., activityLog BASE_DIR)</li>
+            <li>🟡 Activity log governance + UI wiring in progress</li>
+            <li>🟡 Spec Vault apply needs dedicated smoke</li>
+            <li>🟡 git status must be clean for tag/release</li>
+          </ul>
+          <div class="small" style="margin-top:8px;">We only announce Pro capabilities when the Release Gate is green.</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="waitlist" class="section">
+      <div class="h2">Join the waitlist</div>
+      <div class="sub" style="margin-top:6px;">Tell us what you need most: evidence export, audit retention, team governance, or budget policy.</div>
+      <div class="embed">
+        <!-- Replace with your Tally (or Google Form) embed -->
+        <iframe src="YOUR_TALLY_EMBED_URL" style="width:100%; height:520px; border:0;" title="Shipyard waitlist"></iframe>
+      </div>
+    </div>
+
+    <div id="call" class="section">
+      <div class="h2">Book a call (teams / agencies)</div>
+      <div class="sub" style="margin-top:6px;">15 minutes to see if Shipyard fits your delivery workflow.</div>
+      <a class="btn primary" href="YOUR_BOOK_A_CALL_URL" target="_blank" rel="noreferrer">Book a call</a>
+    </div>
+
+    <div class="hr"></div>
+
+    <div class="footer">
+      <div>© Shipyard · by Engineer Tsai Labs</div>
+      <div class="small"><a href="YOUR_GITHUB_REPO_URL" target="_blank" rel="noreferrer">GitHub</a></div>
+    </div>
+  </div>
+</body>
+</html>
