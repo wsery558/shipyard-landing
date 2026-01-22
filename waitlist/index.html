@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Waitlist</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><a href="/en/">Shipyard</a></div>
+    <nav class="nav">
+      <a href="/en/">EN</a>
+      <a href="/zh-Hant/">繁中</a>
+      <a href="/community/">Get Community</a>
+      <a href="/demo/">Demo</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <h1>Join the waitlist</h1>
+    <p class="muted">B2B note: If you want a short call, leave a line at the end of the form. We’ll reply by email.</p>
+
+    <div style="margin-top:16px;">
+      <div class="callout" style="margin:14px 0;">
+  <strong>Pick a persona (for routing)</strong>
+  <div style="height:10px"></div>
+  <a class="chip" href="/waitlist/?persona=consultant">Consultant / Agency</a>
+  <a class="chip" href="/waitlist/?persona=compliance">Compliance / GRC</a>
+  <a class="chip" href="/waitlist/?persona=staff">Staff / Architect</a>
+  <div style="height:10px"></div>
+  <span class="muted">This pre-fills the form and helps us route your request.</span>
+</div>
+<iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
+        style="width:100%; height:720px; border:0;"
+        title="Shipyard waitlist"></iframe>
+    </div>
+  </main>
+
+<script>
+(function() {
+  var frame = document.getElementById("waitlistFrame");
+  if (!frame) return;
+
+  var base = "https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true";
+  var params = new URLSearchParams(window.location.search);
+  var persona = (params.get("persona") || "").toLowerCase();
+
+  var map = {
+    consultant: "Consultant+/+Agency",
+    compliance: "Compliance+/+GRC",
+    staff: "Staff+/+Architect"
+  };
+
+  if (map[persona]) {
+    var u = new URL(base, window.location.origin);
+    u.searchParams.set("entry.1057175306", map[persona]);
+    frame.src = u.toString();
+  }
+})();
+</script>
+
+</body>
+</html>
