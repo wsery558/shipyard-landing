@@ -1,3 +1,14 @@
 
 # local backups (never deploy)
 *.bak.*
+
+# build artifacts
+dist/
+
+# temp / local scratch
+_tmp/
+
+# backup artifacts
+*.bak.*
+**/*.bak.*
+assets/*.bak.*
