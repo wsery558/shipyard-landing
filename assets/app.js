@@ -140,3 +140,77 @@
     });
   });
 })();
+
+
+// shipyard:scroll-reveal:v1
+(function () {
+  function onReady(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+  }
+
+  onReady(function () {
+    // Check if user prefers reduced motion
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      // Immediately reveal all elements
+      document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
+        el.classList.add('revealed');
+      });
+      return;
+    }
+
+    // Create intersection observer for scroll reveal
+    var observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -100px 0px',
+      threshold: 0.1
+    };
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    // Observe all reveal elements
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function (el) {
+      observer.observe(el);
+    });
+  });
+})();
+
+
+// shipyard:typing-effect:v1
+(function () {
+  function onReady(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+  }
+
+  onReady(function () {
+    var prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) return;
+
+    var quickstartCode = document.getElementById('quickstartCode');
+    if (!quickstartCode) return;
+
+    // Add cursor to first command line
+    var firstCommand = quickstartCode.querySelector('.code-line .command');
+    if (!firstCommand) return;
+
+    var cursor = document.createElement('span');
+    cursor.className = 'typing-cursor';
+    firstCommand.appendChild(cursor);
+
+    // Optional: Remove cursor after a few seconds
+    setTimeout(function () {
+      cursor.style.opacity = '0';
+      cursor.style.transition = 'opacity 0.5s';
+    }, 5000);
+  });
+})();

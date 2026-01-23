@@ -32,7 +32,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero reveal">
       <div class="hero-content">
         <h1>Shipyard: delivery governance for AI changes</h1>
         <p class="lead">Spec is the contract → Verification is the gate → Evidence is the deliverable.</p>
@@ -71,14 +71,56 @@
     </section>
 
     <!-- Proof You Can Show - Bento Grid -->
-    <section id="community-proof">
+    <section id="community-proof" class="reveal">
       <h2>Proof you can show</h2>
       <p class="section-lead">If it can't be demonstrated or exported, we don't claim it.</p>
 
-      <div class="bento-grid bento-grid-3">
+      <!-- How It Works -->
+      <div class="how-it-works">
+        <div class="steps-row reveal-stagger">
+          <div class="step-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <div class="step-title">1. Spec</div>
+            <div class="step-description">Define requirements as reproducible contracts</div>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="9 11 12 14 22 4"></polyline>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
+              </svg>
+            </div>
+            <div class="step-title">2. Verify</div>
+            <div class="step-description">Gate delivery on smoke/build/lint proof</div>
+          </div>
+          
+          <div class="step-card">
+            <div class="step-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+            </div>
+            <div class="step-title">3. Deliver Evidence</div>
+            <div class="step-description">Export audit trail + artifacts bundle</div>
+          </div> class="reveal"
+        </div>
+      </div>
+
+      <div class="bento-grid bento-grid-3 reveal-stagger">
         <div class="bento-card">
           <div class="bento-card-icon">📊</div>
-          <h3 class="bento-card-title">Activity Export</h3>
+          <h3 class="bento-card-title">Ac reveal-staggertivity Export</h3>
           <div class="bento-card-content">
             <p>Delivery gate: all green — typecheck / lint / unit / smoke / build / <code>rc:check</code></p>
           </div>
@@ -120,7 +162,7 @@
         traceable changes, retention, and exportable evidence bundles.
       </p>
 
-      <div class="bento-grid bento-grid-2">
+      <div class="bento-grid bento-grid-2 reveal-stagger">
         <div class="bento-card">
           <h3 class="bento-card-title">Industries that care most</h3>
           <ul class="bento-card-list">
@@ -161,14 +203,14 @@
     </section>
 
     <!-- Agency Section -->
-    <section id="agency">
+    <section id="agency" class="reveal">
       <h2>For consultants &amp; agencies: keep AI work billable.</h2>
       <p class="section-lead">
         Clients don't pay for surprises — they pay for predictable delivery.
         Shipyard turns "agent output" into a shippable, reviewable delivery flow.
       </p>
 
-      <div class="bento-grid bento-grid-3">
+      <div class="bento-grid bento-grid-3 reveal-stagger">
         <div class="bento-card">
           <h3 class="bento-card-title">How agencies buy</h3>
           <ul class="bento-card-list">
@@ -211,7 +253,7 @@
     </section>
 
     <!-- Compare Section -->
-    <section id="compare">
+    <section id="compare" class="reveal">
       <h2>Community vs Pro</h2>
       <p class="section-lead">Start with Community (open-source). Upgrade to Pro when you need compliance-grade evidence export and retention.</p>
 
@@ -276,11 +318,11 @@
     </section>
 
     <!-- Personas Section -->
-    <section id="personas">
+    <section id="personas" class="reveal">
       <h2>Who it's for</h2>
       <p class="section-lead">Shipyard serves teams that need delivery governance, not just CI/CD automation.</p>
 
-      <div class="bento-grid bento-grid-3">
+      <div class="bento-grid bento-grid-3 reveal-stagger">
         <div class="bento-card">
           <div class="bento-card-icon">💼</div>
           <h3 class="bento-card-title">Consulting / Agency delivery teams</h3>
