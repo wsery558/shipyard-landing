@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Privacy</title>
+  <meta name="description" content="What data Shipyard collects on this landing site." />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/en/" aria-label="Shipyard home">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="#community-proof">Proof</a>
+        <a href="/trust/">Trust</a>
+        <a href="#compare">Compare</a>
+        <a href="#personas">Personas</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">Waitlist</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>Privacy</h1>
+        <p class="lead">Effective date: 2026-01-24.</p>
+      </header>
+
+      <section class="card">
+        <h2>What we collect</h2>
+        <ul class="clean">
+          <li>Waitlist submissions (email, persona selection, optional receipt email).</li>
+          <li>Site interactions for analytics (page path, timestamp, language, clicks).</li>
+          <li>Lightweight metadata when you visit via UTM or referrer.</li>
+        </ul>
+        <p class="muted">We keep records only as long as needed to support your waitlist request.</p>
+      </section>
+
+      <section class="card">
+        <h2>What we avoid</h2>
+        <ul class="clean">
+          <li>We do not capture secrets, API keys, or private source code through this site.</li>
+          <li>Product data remains local to your run and is not sent to this landing page.</li>
+          <li>Embedded Google Forms only store what you submit within the form.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Telemetry &amp; third parties</h2>
+        <p>
+          Cloudflare Pages records standard request logs, and form hosts retain submissions. We do not add extra monitoring beyond the minimal usage events listed above.
+        </p>
+        <p>
+          Questions? Email via the contact page or read <code>security.txt</code> for the disclosure channel.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'privacy', locale: 'en' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 支援</title>
+  <meta name="description" content="如何獲得 Shipyard 的支援與說明。" />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="/zh-Hant/">證據</a>
+        <a href="/zh-Hant/trust/">信任中心</a>
+        <a href="/zh-Hant/#compare">版本比較</a>
+        <a href="/zh-Hant/#personas">適用對象</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">候補</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>支援</h1>
+        <p class="lead">
+          請透過候補表單或 GitHub Issues 提供情境，我們會以最佳努力回覆。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>聯絡方式</h2>
+        <p>
+          一般問題請在候補表單中填入需求、版本與錯誤；我們會以你提供的 email 回信。
+        </p>
+        <p>
+          <a class="btn" href="/waitlist/">前往候補</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>需附資訊</h2>
+        <ul class="clean">
+          <li>所屬角色（Evidence Pack、Compliance 等）。</li>
+          <li>git repo、版本、指令與錯誤訊息。</li>
+          <li>期望產出與受影響工件。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>GitHub Issues</h2>
+        <p>
+          邏輯或工具錯誤請至 <a href="https://github.com/wsery558/shipyard-community">GitHub Issues</a> 回報，並附上重現步驟。
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'support', locale: 'zh-Hant' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

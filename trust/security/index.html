@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Security</title>
+  <meta name="description" content="How Shipyard keeps evidence exportable and verifiable." />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/en/" aria-label="Shipyard home">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="#community-proof">Proof</a>
+        <a href="/trust/">Trust</a>
+        <a href="#compare">Compare</a>
+        <a href="#personas">Personas</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">Waitlist</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>Security</h1>
+        <p class="lead">
+          Exportable evidence matters more than promises. Here we explain how Shipyard keeps NDJSON logs, checksums, and artifacts verifiable.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>Evidence &amp; integrity</h2>
+        <p>
+          Every run generates gate logs, signed bundles, and SHA256SUMS so you can verify what shipped and when. We may update tooling, but these artifacts remain consistent per release.
+        </p>
+        <ul class="clean">
+          <li><strong>Evidence Pack</strong>: bundles SPEC.md, VERIFY_REPORT.md, SHA256SUMS.txt, and signed archives.</li>
+          <li><strong>Checksums</strong>: distributed artifacts include SHA256 values to detect tampering.</li>
+          <li><strong>Local-first</strong>: verification occurs before anything leaves your repo, and we surface the raw outputs.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Policy anchors</h2>
+        <p>
+          Canonical contact details live in <code>/.well-known/security.txt</code>, and responsible disclosure is described on the disclosure page.
+        </p>
+        <ul class="clean">
+          <li><a href="/.well-known/security.txt">security.txt</a> — published contacts and scope.</li>
+          <li><a href="/trust/disclosure/">Disclosure policy</a> — how to report issues privately.</li>
+          <li><a href="/waitlist/?persona=compliance">Compliance waitlist</a> — best effort assistance around evidence expectations.</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Need compliance evidence?</h2>
+        <p>
+          We aim to describe the exact artifacts we can deliver. Reach out via /waitlist/?persona=compliance to get help framing evidence for your auditors.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/waitlist/?persona=compliance" data-track="cta">Compliance waitlist</a>
+          <a class="btn" href="/waitlist/?persona=evidence-pack" data-track="cta">Evidence Pack waitlist</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'security', locale: 'en' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

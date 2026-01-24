@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 更新資訊</title>
+  <meta name="description" content="Shipyard 的發行說明與工件。" />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="/zh-Hant/">證據</a>
+        <a href="/zh-Hant/trust/">信任中心</a>
+        <a href="/zh-Hant/#compare">版本比較</a>
+        <a href="/zh-Hant/#personas">適用對象</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">候補</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>更新資訊</h1>
+        <p class="lead">
+          所有 Shipyard 的更新都以 GitHub Releases 與 tags 紀錄，並提供 checksums 以便驗證。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>GitHub release</h2>
+        <p>
+          變更以 <a href="https://github.com/wsery558/shipyard-community">GitHub</a> releases 釋出，包含詳細說明與下載資源。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>證據包</h2>
+        <p>
+          每個產物都附上 SPEC、VERIFY 與 SHA256SUMS，方便您將交付證據分享給審查方。
+        </p>
+        <p>
+          <a class="btn" href="/evidence-pack/">Evidence Pack</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Checksum 驗證</h2>
+        <p>
+          可下載的包都附有 SHA256 checksum，讓您在本地自動比對。我們會提供這些資料但不保證永存。
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'releases', locale: 'zh-Hant' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

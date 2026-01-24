@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Releases</title>
+  <meta name="description" content="Where to find Shipyard release notes and artifacts." />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/en/" aria-label="Shipyard home">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="#community-proof">Proof</a>
+        <a href="/trust/">Trust</a>
+        <a href="#compare">Compare</a>
+        <a href="#personas">Personas</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">Waitlist</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>Releases</h1>
+        <p class="lead">
+          We track Shipyard development through GitHub releases and git tags, and every bundle includes checksums for verification.
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>GitHub releases</h2>
+        <p>
+          Releases live at the GitHub repository (<a href="https://github.com/wsery558/shipyard-community">shipyard-community</a>) with changelog details, tags, and assets.
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Evidence bundle</h2>
+        <p>
+          Build outputs always include the same SPEC/VERIFY/SHA256SUMS trio; they are the verifiable link between code and delivery.
+        </p>
+        <p>
+          <a class="btn" href="/evidence-pack/">Evidence Pack</a>
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>Checksum verification</h2>
+        <p>
+          When you download artifacts, cover files offer SHA256 digests for every released bundle. We do not promise immutable storage but provide these digests so you can audit what arrived.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'releases', locale: 'en' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 安全</title>
+  <meta name="description" content="說明 Shipyard 如何保留可驗證的證據匯出。" />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="/zh-Hant/">證據</a>
+        <a href="/zh-Hant/trust/">信任中心</a>
+        <a href="/zh-Hant/#compare">版本比較</a>
+        <a href="/zh-Hant/#personas">適用對象</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">候補</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>安全</h1>
+        <p class="lead">
+          以可匯出的證據為中心，而非承諾證書。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>證據與完整性</h2>
+        <p>
+          每次執行產生 NDJSON gate 日誌、簽名工件與 SHA256SUMS，方便核對交付內容與時間。
+        </p>
+        <ul class="clean">
+          <li><strong>Evidence Pack</strong>：包含 SPEC.md、VERIFY_REPORT.md、SHA256SUMS.txt 及簽名封包。</li>
+          <li><strong>Checksum</strong>：所有產物附上 SHA256 以便驗證。</li>
+          <li><strong>Local-first</strong>：驗證先在本地完成，並公開原始輸出。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>政策基礎</h2>
+        <p>
+          <code>/.well-known/security.txt</code> 與揭露頁面載明聯絡方式與範圍。
+        </p>
+        <ul class="clean">
+          <li><a href="/.well-known/security.txt">Security.txt</a> — 公布聯絡資訊與政策。</li>
+          <li><a href="/zh-Hant/trust/disclosure/">揭露政策</a> — 描述如何提交回報。</li>
+          <li><a href="/waitlist/?persona=compliance">合規候補</a> — 描述可提供的證據。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>合規需求？</h2>
+        <p>
+          我們會說明現有輸出，您可以透過 /waitlist/?persona=compliance 與我們確認哪些資料適合提供。
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/waitlist/?persona=compliance" data-track="cta">合規候補</a>
+          <a class="btn" href="/waitlist/?persona=evidence-pack" data-track="cta">Evidence Pack 候補</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'security', locale: 'zh-Hant' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

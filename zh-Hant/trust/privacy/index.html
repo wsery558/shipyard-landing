@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 隱私政策</title>
+  <meta name="description" content="Shipyard 網站的資料收集說明。" />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="/zh-Hant/">證據</a>
+        <a href="/zh-Hant/trust/">信任中心</a>
+        <a href="/zh-Hant/#compare">版本比較</a>
+        <a href="/zh-Hant/#personas">適用對象</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">候補</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>隱私政策</h1>
+        <p class="lead">生效日期：2026-01-24。</p>
+      </header>
+
+      <section class="card">
+        <h2>我們會收集</h2>
+        <ul class="clean">
+          <li>候補表單：Email、角色、可選收據 Email。</li>
+          <li>網站互動：頁面路徑、時間戳、語言、點擊。</li>
+          <li>utm/referrer。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>我們不收集</h2>
+        <ul class="clean">
+          <li>本網站不會詢問密碼、API Key 或私有原始碼。</li>
+          <li>產品資料留在本地，未回傳至此網站。</li>
+          <li>表單只保存你提交的欄位。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>遙測與第三方</h2>
+        <p>
+          Cloudflare Pages 保留基本請求日誌；嵌入的 Google 表單由其提供。除上述輕量資料外，不額外蒐集。
+        </p>
+        <p>
+          若有疑問，請透過信任中心聯絡或參考 <code>security.txt</code>。
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'privacy', locale: 'zh-Hant' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

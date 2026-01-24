@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 聯絡</title>
+  <meta name="description" content="Shipyard 信任中心的聯絡資訊。" />
+  <link rel="icon" type="image/png" href="/assets/shipyard-logo.png" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <div class="scroll-progress-bar"></div>
+  <div class="container">
+    <nav class="topbar">
+      <div class="brand">
+        <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+          <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+          <span class="brand-name">Shipyard</span>
+          <span class="brand-dot" aria-hidden="true"></span>
+        </a>
+        <span class="brand-badge">by Engineer Tsai Labs</span>
+      </div>
+      <div class="nav">
+        <a href="/zh-Hant/">證據</a>
+        <a href="/zh-Hant/trust/">信任中心</a>
+        <a href="/zh-Hant/#compare">版本比較</a>
+        <a href="/zh-Hant/#personas">適用對象</a>
+        <a href="/demo/">Demo</a>
+        <a href="/waitlist/">候補</a>
+        <div class="lang-switch">
+          <a href="/en/">EN</a>
+          <a href="/zh-Hant/">中文</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container page">
+      <header class="hero">
+        <h1>聯絡</h1>
+        <p class="lead">
+          安全與隱私問題請參考 <code>security.txt</code>；一般問題請透過候補表單。
+        </p>
+      </header>
+
+      <section class="card">
+        <h2>安全／隱私</h2>
+        <p>
+          使用 <code>/\.well-known/security.txt</code> 中的 <code>wsery558@gmail.com</code>，附上範圍與重現步驟。
+        </p>
+      </section>
+
+      <section class="card">
+        <h2>一般問題</h2>
+        <p>
+          填候補表單並說明角色、期望與 repo 資訊，我們會以你提供的 email 回覆。
+        </p>
+        <p>
+          <a class="btn" href="/waitlist/">候補表單</a>
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    (function() {
+      try {
+        if (window.shipyardTrack) window.shipyardTrack('trust_page_view', { page: 'contact', locale: 'zh-Hant' });
+      } catch (e) {}
+    })();
+  </script>
+  <script src="/assets/app.js"></script>
+</body>
+</html>

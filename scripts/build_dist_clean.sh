@@ -35,8 +35,8 @@ cp -v zh-Hant/index.html dist/zh-Hant/index.html
 [ -f zh-Hant/evidence-pack/index.html ] && cp -v zh-Hant/evidence-pack/index.html dist/zh-Hant/evidence-pack/index.html || true
 [ -f pilot/index.html ] && cp -v pilot/index.html dist/pilot/index.html || true
 [ -f zh-Hant/pilot/index.html ] && cp -v zh-Hant/pilot/index.html dist/zh-Hant/pilot/index.html || true
-[ -f trust/index.html ] && cp -v trust/index.html dist/trust/index.html || true
-[ -f zh-Hant/trust/index.html ] && cp -v zh-Hant/trust/index.html dist/zh-Hant/trust/index.html || true
+[ -d trust ] && cp -vR trust/. dist/trust || true
+[ -d zh-Hant/trust ] && cp -vR zh-Hant/trust/. dist/zh-Hant/trust || true
 
 # robots/sitemap
 [ -f robots.txt ] && cp -v robots.txt dist/robots.txt || true
