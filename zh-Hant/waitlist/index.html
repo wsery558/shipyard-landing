@@ -8,7 +8,20 @@
 </head>
 <body>
   <header class="top">
-    <div class="brand"><a href="/zh-Hant/">Shipyard</a></div>
+    <div class="brand">
+      <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+        <span class="brand-logo" aria-hidden="true">
+          <svg class="shipyard-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6h12v12H6z"/>
+            <path d="M9 16V9"/>
+            <path d="M12 16V10"/>
+            <path d="M15 16V11"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shipyard</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+    </div>
     <nav class="nav">
       <a href="/en/">EN</a>
       <a href="/zh-Hant/">繁中</a>
@@ -19,68 +32,77 @@
 
   <main class="wrap section">
     <h1>加入等候名單</h1>
-    <p class="muted">商業洽詢：如果您已經購買，請在表單中貼上您的收據電郵。否則，如果您有任何問題，我們會透過電郵回覆。</p>
+    <p class="muted">B2B 備註：如果已購買，請將收據 Email 填入表單；若有其它問題，我們會以 Email 回覆。</p>
 
-    <div style="margin-top:16px;">
-      <!-- Default view: show both personas -->
-      <div id="defaultPersonaView" style="display:block;">
-        <div class="callout" style="margin:14px 0;">
-          <strong>選擇您的路徑</strong>
-          <div style="height:10px"></div>
-          <a class="chip" href="/zh-Hant/waitlist/?persona=evidence-pack">📦 證據包</a>
-          <a class="chip" href="/zh-Hant/waitlist/?persona=founding-access">🚩 Founding Access</a>
-          <div style="height:10px"></div>
-          <span class="muted">或選擇您的角色（幫助我們路由您的請求）：</span>
-          <div style="height:8px"></div>
-          <a class="chip" href="/zh-Hant/waitlist/?persona=consultant">顧問 / 代理商</a>
-          <a class="chip" href="/zh-Hant/waitlist/?persona=compliance">合規 / GRC</a>
-          <a class="chip" href="/zh-Hant/waitlist/?persona=staff">技術人員 / 架構師</a>
-        </div>
-      </div>
+    <div class="persona-layout">
+      <aside class="persona-left">
+        <div class="persona-panel">
+          <div id="defaultPersonaView" style="display:block;">
+            <div class="persona-card">
+              <div class="callout" style="margin:14px 0;">
+                <strong>選擇方向</strong>
+                <div style="height:10px"></div>
+                <a class="chip" href="/waitlist/?persona=evidence-pack">📦 Evidence Pack</a>
+                <a class="chip" href="/waitlist/?persona=founding-access">🚩 Founding Access</a>
+                <div style="height:10px"></div>
+                <span class="muted">或選擇角色導向：</span>
+                <div style="height:8px"></div>
+                <a class="chip" href="/waitlist/?persona=consultant">Consultant / Agency</a>
+                <a class="chip" href="/waitlist/?persona=compliance">Compliance / GRC</a>
+                <a class="chip" href="/waitlist/?persona=staff">Staff / Architect</a>
+              </div>
+            </div>
+          </div>
 
-      <!-- Evidence-pack view -->
-      <div id="evidencePackView" style="display:none;">
-        <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
-          <strong style="color:#3b82f6;">📦 證據包</strong>
-          <div style="height:8px"></div>
-          <div><strong>您將獲得：</strong></div>
-          <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
-            <li>NDJSON 活動導出（包含閘道）</li>
-            <li>證據包（SPEC.md、VERIFY_REPORT.md、SHA256SUMS.txt）</li>
-            <li>簽名範例 + 樣本日誌</li>
-          </ul>
-          <div style="margin-top:12px;">
-            <a href="/zh-Hant/waitlist/" style="color:#3b82f6; text-decoration:underline; font-size:13px;">← 返回所有選項</a>
+          <div id="evidencePackView" style="display:none;">
+            <div class="persona-card">
+              <h3>Evidence Pack</h3>
+              <p>NDJSON 日誌、SPEC + VERIFY 報告，以及簽名工件，讓稽核端可直接驗證。</p>
+              <div class="cta-group" style="margin-top: var(--space-3); flex-wrap: wrap;">
+                <a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=evidence-pack#waitlist-form" data-track="cta" data-track-type="evidence-pack">加入等候名單</a>
+                <a class="btn btn-secondary" href="/demo/" data-track="cta" data-track-type="demo">查看示範</a>
+              </div>
+              <details style="margin-top: var(--space-4);">
+                <summary>檔案清單</summary>
+                <ul style="margin-top: var(--space-2); margin-bottom: 0;">
+                  <li>NDJSON 活動匯出 + 閘道雜湊</li>
+                  <li>SPEC.md、VERIFY_REPORT.md、SHA256SUMS.txt</li>
+                  <li>run.ps1 / run.sh / run.cmd + 憑證</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <div id="foundingAccessView" style="display:none;">
+            <div class="persona-card">
+              <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
+                <strong style="color:#3b82f6;">🚀 Founding Access · Pro Beta</strong>
+                <div style="height:8px"></div>
+                <p style="margin:0; color:#9ca9b8;">自助 Pro beta 下載，無導入電話，支援透過 GitHub Issues/Discussions。</p>
+                <p style="margin:8px 0 0; color:#9ca9b8;"><strong>價格：</strong>$299 / 月（最多 5 帳號，可隨時取消）。</p>
+                <div style="height:8px;"></div>
+                <div><strong>包括：</strong></div>
+                <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
+                  <li>穩定 / beta / internal 釋出</li>
+                  <li>可攜 bundle 與 checksum</li>
+                  <li>REPORT + SPEC/VERIFY + artifact hash</li>
+                  <li>啟動與狀態腳本</li>
+                  <li>文件 + 支援政策</li>
+                </ul>
+                <div style="margin-top:12px;">
+                  <p style="margin:0; color:#9ca9b8;">填寫下方表單，加入自助等候名單。</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div id="foundingAccessView" style="display:none;">
-        <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
-          <strong style="color:#3b82f6;">🚀 Founding Access · Pro Beta</strong>
-          <div style="height:8px"></div>
-          <p style="margin:0; color:#9ca9b8;">自助 Pro Beta 下載，無上線通話，支援僅透過 GitHub Issues / Discussions。</p>
-          <p style="margin:8px 0 0; color:#9ca9b8;"><strong>定價：</strong>每月 $299（最多 5 個席次，隨時取消）。</p>
-          <div style="height:8px;"></div>
-          <div><strong>包含：</strong></div>
-          <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
-            <li>Pro 下載並區分穩定 / 測試 / 內部通道</li>
-            <li>可攜套件（run.ps1 / run.sh / run.cmd）與校驗碼</li>
-            <li>證據包：REPORT + SPEC/VERIFY/SHA256SUMS + 檔案雜湊</li>
-            <li>授權啟用與狀態腳本</li>
-            <li>文件、快速上手、故障排除與支援政策</li>
-          </ul>
-          <div style="margin-top:12px;">
-            <p style="margin:0; color:#9ca9b8;">填寫以下表單即可加入自助等候名單。</p>
-          </div>
+      </aside>
+      <section class="persona-right">
+        <div class="form-card" id="waitlist-form">
+          <iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
+                  title="Shipyard waitlist"></iframe>
         </div>
-      </div>
-
-
-
-      <iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true&hl=zh_TW"
-              style="width:100%; height:720px; border:0;"
-              title="Shipyard 等候名單"></iframe>
+      </section>
     </div>
   </main>
 

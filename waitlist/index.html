@@ -8,7 +8,20 @@
 </head>
 <body>
   <header class="top">
-    <div class="brand"><a href="/en/">Shipyard</a></div>
+    <div class="brand">
+      <a class="brand-mark" href="/en/" aria-label="Shipyard home">
+        <span class="brand-logo" aria-hidden="true">
+          <svg class="shipyard-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6h12v12H6z"/>
+            <path d="M9 16V9"/>
+            <path d="M12 16V10"/>
+            <path d="M15 16V11"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shipyard</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+    </div>
     <nav class="nav">
       <a href="/en/">EN</a>
       <a href="/zh-Hant/">繁中</a>
@@ -21,65 +34,75 @@
     <h1>Join the waitlist</h1>
     <p class="muted">B2B note: If you already purchased, paste your receipt email in the form. Otherwise, if you have questions, we'll reply by email.</p>
 
-    <div style="margin-top:16px;">
-      <!-- Default view: show both personas -->
-      <div id="defaultPersonaView" style="display:block;">
-        <div class="callout" style="margin:14px 0;">
-          <strong>Pick a path</strong>
-          <div style="height:10px"></div>
-          <a class="chip" href="/waitlist/?persona=evidence-pack">📦 Evidence Pack</a>
-          <a class="chip" href="/waitlist/?persona=founding-access">🚩 Founding Access</a>
-          <div style="height:10px"></div>
-          <span class="muted">Or choose a business role for routing:</span>
-          <div style="height:8px"></div>
-          <a class="chip" href="/waitlist/?persona=consultant">Consultant / Agency</a>
-          <a class="chip" href="/waitlist/?persona=compliance">Compliance / GRC</a>
-          <a class="chip" href="/waitlist/?persona=staff">Staff / Architect</a>
-        </div>
-      </div>
+    <div class="persona-layout">
+      <aside class="persona-left">
+        <div class="persona-panel">
+          <div id="defaultPersonaView" style="display:block;">
+            <div class="persona-card">
+              <div class="callout" style="margin:14px 0;">
+                <strong>Pick a path</strong>
+                <div style="height:10px"></div>
+                <a class="chip" href="/waitlist/?persona=evidence-pack">📦 Evidence Pack</a>
+                <a class="chip" href="/waitlist/?persona=founding-access">🚩 Founding Access</a>
+                <div style="height:10px"></div>
+                <span class="muted">Or choose a business role for routing:</span>
+                <div style="height:8px"></div>
+                <a class="chip" href="/waitlist/?persona=consultant">Consultant / Agency</a>
+                <a class="chip" href="/waitlist/?persona=compliance">Compliance / GRC</a>
+                <a class="chip" href="/waitlist/?persona=staff">Staff / Architect</a>
+              </div>
+            </div>
+          </div>
 
-      <!-- Evidence-pack view -->
-      <div id="evidencePackView" style="display:none;">
-        <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
-          <strong style="color:#3b82f6;">📦 Evidence Pack</strong>
-          <div style="height:8px"></div>
-          <div><strong>What you get:</strong></div>
-          <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
-            <li>NDJSON activity export with gates</li>
-            <li>Evidence bundle (SPEC.md, VERIFY_REPORT.md, SHA256SUMS.txt)</li>
-            <li>Sample signed artifacts + specimen log</li>
-          </ul>
-          <div style="margin-top:12px;">
-            <a href="/waitlist/" style="color:#3b82f6; text-decoration:underline; font-size:13px;">← Back to all options</a>
+          <div id="evidencePackView" style="display:none;">
+            <div class="persona-card">
+              <h3>Evidence Pack</h3>
+              <p>NDJSON logs, SPEC + VERIFY reports, and signed bundles deliver the proofs auditors ask for.</p>
+              <div class="cta-group" style="margin-top: var(--space-3); flex-wrap: wrap;">
+                <a class="btn btn-primary" href="/waitlist/?persona=evidence-pack#waitlist-form" data-track="cta" data-track-type="evidence-pack">Join waitlist</a>
+                <a class="btn btn-secondary" href="/demo/" data-track="cta" data-track-type="demo">See demo</a>
+              </div>
+              <details style="margin-top: var(--space-4);">
+                <summary>File list</summary>
+                <ul style="margin-top: var(--space-2); margin-bottom: 0;">
+                  <li>NDJSON activity exports with gate/per-run hashes</li>
+                  <li>SPEC.md + VERIFY_REPORT.md + SHA256SUMS.txt with signatures</li>
+                  <li>Portable bundle (run.ps1 / run.sh / run.cmd) + certs</li>
+                </ul>
+              </details>
+            </div>
+          </div>
+
+          <div id="foundingAccessView" style="display:none;">
+            <div class="persona-card">
+              <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
+                <strong style="color:#3b82f6;">🚀 Founding Access · Pro Beta</strong>
+                <div style="height:8px"></div>
+                <p style="margin:0; color:#9ca9b8;">Self-serve Pro beta download. No onboarding calls; GitHub Issues/Discussions support only.</p>
+                <p style="margin:8px 0 0; color:#9ca9b8;"><strong>Pricing:</strong> $299 / month (up to 5 seats, cancel anytime).</p>
+                <div style="height:8px;"></div>
+                <div><strong>Includes:</strong></div>
+                <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
+                  <li>Pro downloads with stable / beta / internal releases</li>
+                  <li>Portable bundle (run.ps1 / run.sh / run.cmd) plus checksums</li>
+                  <li>Evidence bundle: REPORT + SPEC/VERIFY/SHA256SUMS + artifact hashes</li>
+                  <li>License activation & status scripts</li>
+                  <li>Docs, quickstart, troubleshooting, and support policy</li>
+                </ul>
+                <div style="margin-top:12px;">
+                  <p style="margin:0; color:#9ca9b8;">Complete the form below to join the self-serve waitlist.</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-
-      <div id="foundingAccessView" style="display:none;">
-        <div class="callout" style="margin:14px 0; background-color: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
-          <strong style="color:#3b82f6;">🚀 Founding Access · Pro Beta</strong>
-          <div style="height:8px"></div>
-          <p style="margin:0; color:#9ca9b8;">Self-serve Pro beta download. No onboarding calls; GitHub Issues/Discussions support only.</p>
-          <p style="margin:8px 0 0; color:#9ca9b8;"><strong>Pricing:</strong> $299 / month (up to 5 seats, cancel anytime).</p>
-          <div style="height:8px;"></div>
-          <div><strong>Includes:</strong></div>
-          <ul style="margin:8px 0 0 16px; color:#9ca9b8;">
-            <li>Pro downloads with stable / beta / internal releases</li>
-            <li>Portable bundle (run.ps1 / run.sh / run.cmd) plus checksums</li>
-            <li>Evidence bundle: REPORT + SPEC/VERIFY/SHA256SUMS + artifact hashes</li>
-            <li>License activation &amp; status scripts</li>
-            <li>Docs, quickstart, troubleshooting, and support policy</li>
-          </ul>
-          <div style="margin-top:12px;">
-            <p style="margin:0; color:#9ca9b8;">Complete the form below to join the self-serve waitlist.</p>
-          </div>
+      </aside>
+      <section class="persona-right">
+        <div class="form-card" id="waitlist-form">
+          <iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
+                  title="Shipyard waitlist"></iframe>
         </div>
-      </div>
-
-
-<iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
-        style="width:100%; height:720px; border:0;"
-        title="Shipyard waitlist"></iframe>
+      </section>
     </div>
   </main>
 

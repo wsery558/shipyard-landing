@@ -13,7 +13,20 @@
 </head>
 <body>
   <header class="top">
-    <div class="brand"><a href="/zh-Hant/">Shipyard</a></div>
+    <div class="brand">
+      <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+        <span class="brand-logo" aria-hidden="true">
+          <svg class="shipyard-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 6h12v12H6z"/>
+            <path d="M9 16V9"/>
+            <path d="M12 16V10"/>
+            <path d="M15 16V11"/>
+          </svg>
+        </span>
+        <span class="brand-name">Shipyard</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+    </div>
     <nav class="nav">
       <a href="/en/">EN</a>
       <a href="/zh-Hant/">繁中</a>
@@ -23,77 +36,160 @@
   </header>
 
   <main class="wrap section">
-    <h1>證據包樣本</h1>
-    <p class="muted">這是您購買證據包時將獲得的內容。</p>
+    <section class="hero reveal hero-tight">
+      <div class="hero-content">
+        <h1>證據包</h1>
+        <p class="lead">自助交付的合規證據：NDJSON 活動日誌、打包工件與簽名憑證。</p>
+        <p class="muted" style="margin-top: var(--space-3); max-width: 620px;">一鍵下載，立即在任何倉庫運行、驗證並匯出稽核級報告。</p>
+        <div class="cta-group" style="margin-top: var(--space-3); flex-wrap: wrap;">
+          <a id="waitlistBtn" class="btn btn-primary" href="/zh-Hant/waitlist/?persona=evidence-pack" data-track="cta" data-track-type="evidence-pack">取得證據包</a>
+          <a class="btn btn-secondary" href="/demo/" data-track="cta" data-track-type="demo">查看示範</a>
+        </div>
+      </div>
+    </section>
 
-    <div style="margin-top:28px;">
-      <h2 id="sample-format-activity-log" style="font-size:18px; margin:0 0 16px;">格式示例 — NDJSON 活動日誌</h2>
-      <p style="color:#9ca9b8; margin:0 0 12px; font-size:14px;">每一行是一個閘道事件，包含時間戳、狀態和上下文。</p>
-      
-      <div class="specimen-block">{"ts":"2026-01-23T14:32:00.123Z","gate":"file-hash","path":"src/main.rs","hash":"sha256:abc123..","status":"pass"}
-{"ts":"2026-01-23T14:32:01.456Z","gate":"file-hash","path":"docs/README.md","hash":"sha256:def456..","status":"pass"}
-{"ts":"2026-01-23T14:32:02.789Z","gate":"commit-signed","commit":"a1b2c3d","signer":"alice@example.com","status":"pass"}
-{"ts":"2026-01-23T14:32:03.012Z","gate":"commit-signed","commit":"e4f5g6h","signer":"bob@example.com","status":"pass"}
-{"ts":"2026-01-23T14:32:04.345Z","summary":"4/4 gates passed","batch_id":"batch-xyz-001","timestamp":"2026-01-23T14:32:04.345Z"}</div>
+    <section class="reveal section-tight">
+      <h2>交付內容</h2>
+      <p class="section-lead">完整包裝，快速匯出可供驗證團隊審閱的資料與工件。</p>
+      <ul style="margin: var(--space-3) 0 var(--space-4); padding-left: 1.25rem; color: var(--text-secondary); line-height: 1.7;">
+        <li style="margin-bottom: var(--space-2); font-weight: 600;">NDJSON 活動日誌記錄每道 gate、角色、時間戳與簽名雜湊。</li>
+        <li style="margin-bottom: var(--space-2); font-weight: 600;">證據包含 SPEC.md、VERIFY_REPORT.md、SHA256SUMS.txt 及文件與保留備註。</li>
+        <li style="font-weight: 600;">簽名工件配可攜 run 腳本、封包與 checksum 清單。</li>
+      </ul>
+      <div class="bento-grid bento-grid-3">
+        <div class="bento-card">
+          <div class="bento-card-title">NDJSON 活動日誌</div>
+          <p style="color: var(--text-secondary);">記錄每個閘道的時間、角色、狀態與雜湊。</p>
+          <ul style="margin: var(--space-4) 0 0 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li>Smoke · lint · typecheck · unit · build · bundle</li>
+            <li>結果、警示與執行時間</li>
+            <li>簽名 gate hash</li>
+          </ul>
+        </div>
+        <div class="bento-card">
+          <div class="bento-card-title">證據包</div>
+          <p style="color: var(--text-secondary);">包含 SPEC.md、VERIFY_REPORT.md、SHA256SUMS.txt 與文件說明。</p>
+          <ul style="margin: var(--space-4) 0 0 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li>閘道定義與驗證結果</li>
+            <li>工件清單與雜湊</li>
+            <li>快速上手與排錯筆記</li>
+          </ul>
+        </div>
+        <div class="bento-card">
+          <div class="bento-card-title">簽名工件</div>
+          <p style="color: var(--text-secondary);">run.ps1 / run.sh / run.cmd 與簽章、憑證搭配發送。</p>
+          <ul style="margin: var(--space-4) 0 0 1rem; color: var(--text-secondary); font-size: 0.95rem;">
+            <li>自動化打包流程</li>
+            <li>簽名 manifest 與 checksum</li>
+            <li>啟動腳本與狀態檢查</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-      <h2 id="bundle-structure" style="font-size:18px; margin:28px 0 16px;">格式示例 — 包結構</h2>
-      <p style="color:#9ca9b8; margin:0 0 12px; font-size:14px;">完整的證據包包括：</p>
-      
-      <div class="specimen-block" style="white-space: normal;">evidence-pack-20260123/
-├── SPEC.md                 ← 閘道定義和測試結果
+    <section class="reveal">
+      <h2 id="sample-format-activity-log">格式示例 — NDJSON 活動日誌</h2>
+      <p class="muted" style="max-width: 640px;">以下資料片段是證據包匯出的日誌實例。</p>
+      <div class="callout" style="margin-top: var(--space-4);">
+        <div class="specimen-block">{"ts":"2026-01-23T14:32:00.123Z","gate":"file-hash","path":"src/main.rs","hash":"sha256:abc123..","status":"pass"}{"ts":"2026-01-23T14:32:01.456Z","gate":"file-hash","path":"docs/README.md","hash":"sha256:def456..","status":"pass"}{"ts":"2026-01-23T14:32:02.789Z","gate":"commit-signed","commit":"a1b2c3d","signer":"alice@example.com","status":"pass"}{"ts":"2026-01-23T14:32:03.012Z","gate":"commit-signed","commit":"e4f5g6h","signer":"bob@example.com","status":"pass"}{"ts":"2026-01-23T14:32:04.345Z","summary":"4/4 gates passed","batch_id":"batch-xyz-001","timestamp":"2026-01-23T14:32:04.345Z"}</div>
+        <p class="callout-content" style="margin-top: var(--space-3);">每行皆為 Gate 事件，可用於篩選、匯出與保存。</p>
+      </div>
+      <h2 id="bundle-structure" style="margin-top: var(--space-6);">格式示例 — 包結構</h2>
+      <div class="callout" style="margin-top: var(--space-2);">
+        <div class="specimen-block" style="white-space: normal;">evidence-pack-20260123/
+├── SPEC.md                 ← 閘道定義與測試結果
 ├── VERIFY_REPORT.md        ← 簽名驗證摘要
 ├── SHA256SUMS.txt          ← 文件完整性哈希
 ├── activity.ndjson         ← 完整事件日誌
 ├── gates/
-│   ├── file-hash.json      ← 按閘道的結果
+│   ├── file-hash.json      ← 每個閘道結果
 │   └── commit-signed.json
 ├── artifacts/
-│   ├── root.sig            ← 簽名的清單
-│   ├── bundle.tar.gz.sig   ← 簽名的存檔
-│   └── cert.pem            ← 驗證證書
-└── README.txt              ← 快速開始指南
-</div>
-
-      <h2 id="compliance-files" style="font-size:18px; margin:28px 0 16px;">包含內容</h2>
-      <div class="callout" style="margin:16px 0;">
-        <ul style="margin:12px 0 0 16px; color:#9ca9b8; font-size:14px;">
-          <li><strong>NDJSON 活動日誌：</strong> 每個閘道執行的完整上下文</li>
-          <li><strong>證明規格：</strong> 測試了什麼、如何測試以及為什麼</li>
-          <li><strong>簽名工件：</strong> 密碼學驗證的證據包</li>
-          <li><strong>文件完整性：</strong> SHA256 總和以實現可重現性</li>
-          <li><strong>證書：</strong> 用於離線驗證的公鑰</li>
-        </ul>
+│   ├── root.sig            ← 簽名清單
+│   ├── bundle.tar.gz.sig   ← 簽名封包
+│   └── cert.pem            ← 驗證憑證
+└── README.txt              ← 快速開始指南</div>
       </div>
-
-      <h2 style="font-size:18px; margin:28px 0 16px;">定價</h2>
-      <div class="callout" style="margin:16px 0; background: rgba(59, 130, 246, 0.1); border-left: 4px solid #3b82f6;">
-        <strong style="color:#3b82f6;">新創優惠價</strong>
-        <div style="margin-top:8px; font-size:14px; color:#9ca9b8;">
-          <strong>$299</strong> 每份證據包（標準範圍）<br/>
-          <span style="font-size:12px;">客製化範圍可用 — 聯繫銷售</span>
+      <div class="callout" style="margin-top: var(--space-4);">
+        <div class="callout-title">包含內容</div>
+        <div class="callout-content">
+          <ul style="margin: var(--space-3) 0 0 1rem;">
+            <li>NDJSON 活動日誌與 Spec</li>
+            <li>簽名工件與雜湊</li>
+            <li>操作手冊與排錯筆記</li>
+          </ul>
         </div>
       </div>
+    </section>
 
-      <div class="callout" style="margin:16px 0;">
-        <strong style="color:#3b82f6;">合規框架</strong>
-        <ul style="margin:12px 0 0 16px; color:#9ca9b8; font-size:14px;">
-          <li>SOC 2 / ISO 27001 / NIST 800-53</li>
-          <li>GDPR / HIPAA / PCI DSS</li>
-          <li>FedRAMP / 21 CFR Part 11 / GxP</li>
-        </ul>
-        <p style="margin:12px 0 0; font-size:12px; color:#9ca9b8;">Shipyard 產生這些框架的審計證據。並非正式認證。</p>
+    <section class="reveal how-it-works">
+      <div style="margin-bottom: var(--space-4);">
+        <h2>如何使用</h2>
+        <p class="muted" style="max-width: 640px;">安裝包、執行閘道，再匯出報告，只要三步。</p>
       </div>
-
-      <h2 style="font-size:18px; margin:28px 0 16px;">開始使用</h2>
-      <p style="color:#9ca9b8; margin:0 0 16px; font-size:14px;">
-        選擇您的方式：
-      </p>
-
-      <div style="margin-top:32px; display:flex; gap:12px; flex-wrap:wrap;">
-        <a id="buyBtn" href="#" class="chip" style="display:inline-block; padding:12px 16px; background:#3b82f6; color:white; text-decoration:none; border-radius:6px; font-weight:600; cursor:pointer;">購買證據包</a>
-        <a href="/zh-Hant/waitlist/?persona=evidence-pack" class="chip" style="display:inline-block; padding:12px 16px; background:#f5f5f5; color:#1a1a1a; text-decoration:none; border-radius:6px; font-weight:600; border:1px solid #ddd;">還沒準備好？加入等候名單</a>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-title">1. 下載與設定</div>
+          <p class="step-description">對應你的 repo 設定參數並啟動終端。</p>
+        </div>
+        <div class="step-card">
+          <div class="step-title">2. 執行閘道</div>
+          <p class="step-description">執行 smoke、lint、typecheck、unit、build 與 artifact。</p>
+        </div>
+        <div class="step-card">
+          <div class="step-title">3. 匯出與交付</div>
+          <p class="step-description">匯出 NDJSON、bundle 與簽名清單分享給合規。</p>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <section class="reveal section-tight">
+      <h2>適合的團隊</h2>
+      <p class="section-lead">需要可重現、可追蹤與可出示的交付。</p>
+      <div class="cta-group" style="margin-top: var(--space-3); flex-wrap: wrap;">
+        <a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=evidence-pack" data-track="cta" data-track-type="evidence-pack">加入證據包候補名單</a>
+      </div>
+      <div class="bento-grid bento-grid-3">
+        <div class="bento-card">
+          <div class="bento-card-title">顧問 / 代理商</div>
+          <p style="color: var(--text-secondary);">向客戶提供透明、可稽核的流程與交付。</p>
+        </div>
+        <div class="bento-card">
+          <div class="bento-card-title">安全 / 合規</div>
+          <p style="color: var(--text-secondary);">滿足 SOC 2、ISO 27001、HIPAA 等要求的證據匯出。</p>
+        </div>
+        <div class="bento-card">
+          <div class="bento-card-title">部署 / 工程團隊</div>
+          <p style="color: var(--text-secondary);">可重複的打包 + 腳本，確保交付一致性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="callout">
+        <div class="callout-title">定價</div>
+        <div class="callout-content">
+          創始定價 $299 / 月，最多 5 帳號，隨時可取消，沒有額外導入或會議。
+        </div>
+      </div>
+      <div class="callout callout-warning">
+        <div class="callout-title">合規框架</div>
+        <div class="callout-content">
+          SOC 2 · ISO 27001 · NIST 800-53 · HIPAA · PCI DSS · FedRAMP · 21 CFR Part 11 · GxP<br/>
+          Shipyard 產出符合這些框架的稽核證據，並非正式認證。
+        </div>
+      </div>
+      <div class="callout">
+        <div class="callout-title">常見問題</div>
+        <div class="callout-content">
+          <ul style="margin: var(--space-3) 0 0 1rem;">
+            <li>在本地執行，無需額外服務或導入。</li>
+            <li>支援透過 GitHub Issues 與 Discussions，沒有 SLA。</li>
+            <li>需要進階整合？加入候補即可獲得自動化接口。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
 <script>
