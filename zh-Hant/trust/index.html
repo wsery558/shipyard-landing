@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 信任中心</title>
+  <meta name="description" content="介紹 Shipyard 如何處理安全、隱私與負責任揭露。" />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <a class="brand-mark" href="/zh-Hant/" aria-label="Shipyard 主頁">
+        <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+        <span class="brand-name">Shipyard</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+      <span class="brand-badge">by Engineer Tsai Labs</span>
+    </div>
+    <nav class="nav">
+      <a href="/en/">EN</a>
+      <a href="/zh-Hant/">繁中</a>
+      <a href="/community/">Get Community</a>
+      <a href="/demo/">Demo</a>
+      <a href="/zh-Hant/trust/" class="active">信任中心</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <div class="container page">
+      <header class="hero">
+        <h1>信任中心</h1>
+        <p class="lead">
+          Shipyard 追求的是「看得懂、查得到、交得出去」。這頁用最務實的方式說清楚：我們怎麼處理安全、隱私與負責任揭露（不做過度承諾）。
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/waitlist/?persona=compliance" data-track="cta">加入候補名單</a>
+          <a class="btn" href="/evidence-pack/" data-track="cta">Evidence Pack</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>安全概覽</h2>
+        <ul class="clean">
+          <li><strong>可輸出證據</strong>：活動紀錄與產物能夠整理成即可檢視的包。</li>
+          <li><strong>完整性支援</strong>：checksums 協助在交付時發現可能的改動。</li>
+          <li><strong>少講保證、多給證據</strong>：以可驗證輸出取代空泛承諾。</li>
+        </ul>
+      </section>
+
+      <section class="card" id="privacy">
+        <h2>隱私</h2>
+        <p>
+          這是產品網站。若你送出候補表單，你的回覆會由表單服務商保存。
+          另外我們會收集輕量使用事件（頁面瀏覽、點擊）來改進網站與產品。
+        </p>
+        <ul class="clean">
+          <li><strong>會收集</strong>：頁面路徑、時間戳、語言、以及可能存在的 referrer/UTM。</li>
+          <li><strong>不鼓勵提供</strong>：密碼、API key、私有原始碼等敏感資料。</li>
+          <li><strong>資料使用</strong>：不販售個資。</li>
+        </ul>
+        <p class="muted">若你對資料處理有疑問，請看下方聯絡方式。</p>
+      </section>
+
+      <section class="card" id="support">
+        <h2>支援</h2>
+        <p>
+          最快的方式是透過 email。若你已購買並需要 Evidence Pack 的流程，請到候補頁貼上你的收據 email，我們會用 email 回覆你。
+        </p>
+        <p>
+          <a class="btn" href="/waitlist/?persona=evidence-pack" data-track="cta">Evidence Pack 候補入口</a>
+        </p>
+      </section>
+
+      <section class="card" id="vulnerability-disclosure">
+        <h2>負責任揭露</h2>
+        <p>
+          我們歡迎善意的安全回報。請附上重現步驟、影響描述，以及可安全分享的證據。
+          我們會儘快回覆並協調修正，但不保證時效。
+        </p>
+        <ul class="clean">
+          <li><strong>回報方式</strong>：請參考 <code>security.txt</code> 與 <code>SECURITY.md</code>。</li>
+          <li><strong>範圍</strong>：本網站、公開 demo 與 Shipyard 相關 repo。</li>
+          <li><strong>善意保護</strong>：避免傷害與擴散的測試，我們視為善意回報。</li>
+        </ul>
+      </section>
+
+      <section class="card" id="release-notes">
+        <h2>更新紀錄</h2>
+        <p>產品與 repo 的變更以 GitHub commits / releases 為準；若有公開 changelog，會在這裡補連結。</p>
+      </section>
+
+      <section class="card" id="contact">
+        <h2>聯絡</h2>
+        <p>
+          安全與隱私問題請使用 <code>security.txt</code> 中的聯絡方式；一般問題請用候補表單，我們會用 email 回覆。
+        </p>
+        <p>
+          <a class="btn primary" href="/waitlist/" data-track="cta">前往候補表單</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    if (window.shipyardTrack) {
+      window.shipyardTrack('trust_page_view', { lang: 'zh-Hant' });
+    }
+  })();
+  </script>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

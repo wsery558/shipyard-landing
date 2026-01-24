@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Trust Center</title>
+  <meta name="description" content="Security, privacy, and responsible disclosure information for Shipyard." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <a class="brand-mark" href="/en/" aria-label="Shipyard home">
+        <img class="brand-logo" src="/assets/shipyard-logo.png" alt="Shipyard" width="22" height="22" loading="eager" decoding="async" />
+        <span class="brand-name">Shipyard</span>
+        <span class="brand-dot" aria-hidden="true"></span>
+      </a>
+      <span class="brand-badge">by Engineer Tsai Labs</span>
+    </div>
+    <nav class="nav">
+      <a href="/en/">EN</a>
+      <a href="/zh-Hant/">繁中</a>
+      <a href="/community/">Get Community</a>
+      <a href="/demo/">Demo</a>
+      <a href="/trust/" class="active">Trust</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <div class="container page">
+      <header class="hero">
+        <h1>Trust Center</h1>
+        <p class="lead">
+          Shipyard is built for clarity and control. This page explains how we handle security, privacy, and responsible disclosure—without overpromising.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="/waitlist/?persona=compliance" data-track="cta">Join the waitlist</a>
+          <a class="btn" href="/evidence-pack/" data-track="cta">Evidence Pack</a>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>Security at a glance</h2>
+        <ul class="clean">
+          <li><strong>Exportable evidence</strong>: activity logs and artifacts can be packaged for review.</li>
+          <li><strong>Integrity support</strong>: checksums help detect tampering during handoff.</li>
+          <li><strong>Least surprise</strong>: we prefer explicit outputs over vague assurances.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="privacy">
+        <h2>Privacy</h2>
+        <p>
+          This site is a product landing experience. If you submit the waitlist form, your responses are stored by the form provider.
+          We also collect lightweight usage events (page views and clicks) to improve the site and the product.
+        </p>
+        <ul class="clean">
+          <li><strong>What we collect</strong>: page path, timestamp, language, and basic referrer/UTM when present.</li>
+          <li><strong>What we avoid</strong>: we do not ask for secrets, API keys, or private source code via this website.</li>
+          <li><strong>Data sharing</strong>: we do not sell personal data.</li>
+        </ul>
+        <p class="muted">
+          Questions? Use the contact section below.
+        </p>
+      </section>
+
+      <section class="card" id="support">
+        <h2>Support</h2>
+        <p>
+          The fastest way to reach us is email. If you already purchased and need the Evidence Pack flow, use the waitlist page and paste your receipt email.
+        </p>
+        <p>
+          <a class="btn" href="/waitlist/?persona=evidence-pack" data-track="cta">Evidence Pack waitlist</a>
+        </p>
+      </section>
+
+      <section class="card" id="vulnerability-disclosure">
+        <h2>Vulnerability Disclosure</h2>
+        <p>
+          We appreciate responsible reports. Please include steps to reproduce, impact, and any proof-of-concept that is safe to share.
+          We aim to acknowledge reports and coordinate a fix, but we do not guarantee timelines.
+        </p>
+        <ul class="clean">
+          <li><strong>Contact</strong>: see <code>security.txt</code> and <code>SECURITY.md</code>.</li>
+          <li><strong>Scope</strong>: the landing site, public demos, and Shipyard-related repos.</li>
+          <li><strong>Safe harbor</strong>: good-faith testing that avoids harm is welcome.</li>
+        </ul>
+      </section>
+
+      <section class="card" id="release-notes">
+        <h2>Release notes</h2>
+        <p>
+          Product and repo changes are tracked in GitHub commits/releases. When a public changelog exists, we link it here.
+        </p>
+      </section>
+
+      <section class="card" id="contact">
+        <h2>Contact</h2>
+        <p>
+          For security and privacy inquiries, use the addresses listed in <code>security.txt</code>.
+          For general questions, use the waitlist form and we’ll reply by email.
+        </p>
+        <p>
+          <a class="btn primary" href="/waitlist/" data-track="cta">Open waitlist</a>
+        </p>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div>© Shipyard · by Engineer Tsai Labs</div>
+    <div>
+      <a href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+  (function() {
+    if (window.shipyardTrack) {
+      window.shipyardTrack('trust_page_view', { lang: 'en' });
+    }
+  })();
+  </script>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

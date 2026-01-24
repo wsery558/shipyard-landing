@@ -803,6 +803,64 @@ section .section-lead {
   border-color: rgba(245, 158, 11, 0.2);
 }
 
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  margin: var(--space-6) 0;
+}
+
+.page .hero {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.page .hero .cta-row {
+  margin-top: var(--space-2);
+}
+
+.card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+}
+
+.card h2 {
+  margin-bottom: var(--space-3);
+  font-size: var(--text-xl);
+}
+
+.card .muted {
+  margin-top: var(--space-3);
+}
+
+.clean {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.clean li {
+  position: relative;
+  padding-left: var(--space-4);
+}
+
+.clean li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-primary);
+}
+
 .persona-layout {
   display: flex;
   flex-direction: column;

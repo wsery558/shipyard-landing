@@ -14,7 +14,7 @@ FORBIDDEN_PATTERN=$(printf "%s|" "${FORBIDDEN_PARTS[@]}")
 FORBIDDEN_PATTERN=${FORBIDDEN_PATTERN%|}
 
 rm -rf dist
-mkdir -p dist/assets dist/en dist/zh-Hant dist/zh-Hant/waitlist dist/zh-Hant/walkthrough dist/zh-Hant/evidence-pack dist/zh-Hant/pilot dist/zh-Hant/demo dist/community dist/demo dist/waitlist dist/walkthrough dist/evidence-pack dist/pilot
+mkdir -p dist/assets dist/en dist/zh-Hant dist/zh-Hant/waitlist dist/zh-Hant/walkthrough dist/zh-Hant/evidence-pack dist/zh-Hant/pilot dist/zh-Hant/demo dist/community dist/demo dist/waitlist dist/walkthrough dist/evidence-pack dist/pilot dist/trust dist/zh-Hant/trust dist/.well-known
 
 # ✅ root：英文當預設首頁（要改中文就把 en 改成 zh-Hant）
 cp -v en/index.html dist/index.html
@@ -35,10 +35,13 @@ cp -v zh-Hant/index.html dist/zh-Hant/index.html
 [ -f zh-Hant/evidence-pack/index.html ] && cp -v zh-Hant/evidence-pack/index.html dist/zh-Hant/evidence-pack/index.html || true
 [ -f pilot/index.html ] && cp -v pilot/index.html dist/pilot/index.html || true
 [ -f zh-Hant/pilot/index.html ] && cp -v zh-Hant/pilot/index.html dist/zh-Hant/pilot/index.html || true
+[ -f trust/index.html ] && cp -v trust/index.html dist/trust/index.html || true
+[ -f zh-Hant/trust/index.html ] && cp -v zh-Hant/trust/index.html dist/zh-Hant/trust/index.html || true
 
 # robots/sitemap
 [ -f robots.txt ] && cp -v robots.txt dist/robots.txt || true
 [ -f sitemap.xml ] && cp -v sitemap.xml dist/sitemap.xml || true
+[ -f .well-known/security.txt ] && mkdir -p dist/.well-known && cp -v .well-known/security.txt dist/.well-known/security.txt || true
 
 # assets：只複製非 .bak.*
 find assets -maxdepth 1 -type f ! -name "*.bak.*" -exec cp -v {} dist/assets/ \;
