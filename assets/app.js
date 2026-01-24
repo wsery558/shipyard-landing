@@ -619,3 +619,151 @@ window.SHIPYARD_PAYMENT_URL = (function() {
   // Initial update
   updateScrollVars();
 })();
+
+
+/* shipyardLandingBindings_v1 */
+
+function shipyardLanding_onReady(fn) {
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+  else fn();
+}
+
+function shipyardLanding_initDemoBindings() {
+  var hasDemo = document.querySelector("[data-demo-tab]") || document.getElementById("demoCopyBtn") || document.getElementById("demoOpenGithubBtn");
+  if (!hasDemo) return;
+
+  // Open GitHub
+  var openBtn = document.getElementById("demoOpenGithubBtn");
+  if (openBtn) {
+    openBtn.addEventListener("click", function () {
+      try { shipyardTrack && shipyardTrack("demo_open_github", { page: location.pathname }); } catch (_) {}
+      var href = openBtn.getAttribute("data-href") || "https://github.com/wsery558/shipyard-community";
+      window.open(href, "_blank", "noopener");
+    });
+  }
+
+  // Copy commands
+  var copyBtn = document.getElementById("demoCopyBtn");
+  if (copyBtn) {
+    copyBtn.addEventListener("click", async function () {
+      var targetId = copyBtn.getAttribute("data-copy-target") || "demoShellCmd";
+      var el = document.getElementById(targetId);
+      var text = el ? ((el.innerText || el.textContent || "").trim()) : "";
+      if (!text) return;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        var old = copyBtn.textContent;
+        copyBtn.textContent = (location.pathname.indexOf("/zh-Hant/") >= 0) ? "已複製" : "Copied";
+        setTimeout(function(){ copyBtn.textContent = old; }, 900);
+        try { shipyardTrack && shipyardTrack("demo_copy", { page: location.pathname }); } catch (_) {}
+      } catch (e) {
+        console.error("copy failed", e);
+      }
+    });
+  }
+
+  // Tabs: prefer [data-demo-panel], fallback to #demoPanelSmoke/#demoPanelActivity/#demoPanelBundle if present
+  var tabButtons = Array.from(document.querySelectorAll("[data-demo-tab]"));
+  if (!tabButtons.length) return;
+
+  var panels = Array.from(document.querySelectorAll("[data-demo-panel]"));
+  if (!panels.length) {
+    var smoke = document.getElementById("demoPanelSmoke");
+    var act = document.getElementById("demoPanelActivity");
+    var bun = document.getElementById("demoPanelBundle");
+    if (smoke) { smoke.setAttribute("data-demo-panel", "smoke"); panels.push(smoke); }
+    if (act) { act.setAttribute("data-demo-panel", "activity"); panels.push(act); }
+    if (bun) { bun.setAttribute("data-demo-panel", "bundle"); panels.push(bun); }
+  }
+
+  function activate(tab) {
+    tabButtons.forEach(function (b) {
+      b.classList.toggle("active", (b.getAttribute("data-demo-tab") || b.dataset.tab || "").trim() === tab);
+    });
+    panels.forEach(function (p) {
+      var name = (p.getAttribute("data-demo-panel") || "").trim();
+      if (!name) return;
+      p.style.display = (name === tab) ? "" : "none";
+    });
+  }
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var tab = (btn.getAttribute("data-demo-tab") || btn.dataset.tab || "").trim();
+      if (!tab) return;
+      activate(tab);
+      try { shipyardTrack && shipyardTrack("demo_tab", { tab: tab, page: location.pathname }); } catch (_) {}
+    });
+  });
+
+  // default tab
+  var activeBtn = tabButtons.find(function(b){ return b.classList.contains("active"); });
+  var defaultTab = activeBtn ? ((activeBtn.getAttribute("data-demo-tab") || activeBtn.dataset.tab || "").trim())
+                            : ((tabButtons[0].getAttribute("data-demo-tab") || tabButtons[0].dataset.tab || "").trim());
+  if (defaultTab) activate(defaultTab);
+}
+
+function shipyardLanding_initWaitlistBindings() {
+  if (location.pathname.indexOf("/waitlist") < 0) return;
+
+  function setParam(k, v) {
+    var url = new URL(location.href);
+    if (v) url.searchParams.set(k, v);
+    else url.searchParams.delete(k);
+    history.replaceState({}, "", url.toString());
+  }
+
+  function getParam(k) {
+    try { return new URL(location.href).searchParams.get(k) || ""; } catch (_) { return ""; }
+  }
+
+  function findButtonsByText(rx) {
+    var els = Array.from(document.querySelectorAll("button, a"));
+    return els.filter(function(el){
+      var t = (el.textContent || "").trim();
+      return rx.test(t);
+    });
+  }
+
+  var personaMap = {
+    "consultant": /Consultant\s*\/\s*Agency|顧問|代理|顧問\/代理/i,
+    "compliance": /Compliance\s*\/\s*GRC|合規|稽核|法遵/i,
+    "staff": /Staff\s*\/\s*Architect|架構|工程|技術/i
+  };
+
+  function setActive(btns, chosen) {
+    btns.forEach(function(b){ b.classList.toggle("active", b === chosen); });
+  }
+
+  function scrollToForm() {
+    var iframe = document.querySelector("iframe");
+    if (iframe) iframe.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  Object.keys(personaMap).forEach(function(key){
+    var btns = findButtonsByText(personaMap[key]);
+    btns.forEach(function(btn){
+      btn.addEventListener("click", function(e){
+        // If it's an anchor that navigates away, keep default; otherwise prevent jumpy behavior
+        try { shipyardTrack && shipyardTrack("waitlist_persona", { persona: key, page: location.pathname }); } catch (_) {}
+        setParam("persona", key);
+        setActive(btns, btn);
+        scrollToForm();
+      });
+    });
+  });
+
+  // apply from URL on load
+  var p = getParam("persona");
+  if (p && personaMap[p]) {
+    var btns = findButtonsByText(personaMap[p]);
+    if (btns.length) setActive(btns, btns[0]);
+  }
+}
+
+shipyardLanding_onReady(function(){
+  try { shipyardLanding_initDemoBindings(); } catch(e){ console.error(e); }
+  try { shipyardLanding_initWaitlistBindings(); } catch(e){ console.error(e); }
+});
+
