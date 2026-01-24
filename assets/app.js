@@ -767,3 +767,45 @@ shipyardLanding_onReady(function(){
   try { shipyardLanding_initWaitlistBindings(); } catch(e){ console.error(e); }
 });
 
+
+
+// auto: demo-jump-bindings v1
+(function () {
+  function bindDemoJump() {
+    try {
+      var jumpBtns = Array.from(document.querySelectorAll("[data-demo-jump]"));
+      if (!jumpBtns.length) return;
+
+      jumpBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var tab = (btn.getAttribute("data-demo-jump") || "").trim();
+          if (!tab) return;
+
+          // Prefer data-demo-tab, fallback to data-tab
+          var target =
+            document.querySelector('[data-demo-tab="' + tab + '"]') ||
+            document.querySelector('[data-tab="' + tab + '"]');
+
+          if (target && typeof target.click === "function") target.click();
+
+          // bring the tabs into view (best-effort)
+          var tabsRoot =
+            document.querySelector(".demo-tabs") ||
+            document.querySelector("[data-demo-tabs]") ||
+            document.querySelector("#demoTabs");
+
+          if (tabsRoot && tabsRoot.scrollIntoView) {
+            tabsRoot.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    } catch (_) {}
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bindDemoJump);
+  } else {
+    bindDemoJump();
+  }
+})();
+ // /auto: demo-jump-bindings v1

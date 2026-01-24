@@ -2236,3 +2236,22 @@ section .section-lead {
     width: 100%;
   }
 }
+
+
+/* auto: chip-button-reset v1 */
+button.chip {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+button.chip:focus {
+  outline: 2px solid rgba(120, 180, 255, 0.35);
+  outline-offset: 2px;
+  border-radius: 999px;
+}
+/* /auto: chip-button-reset v1 */
