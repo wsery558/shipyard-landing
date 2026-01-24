@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — 試點計劃</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .persona-option { background: #0f1419; border: 1px solid #1a1f29; border-radius: 6px; padding: 14px; margin: 12px 0; }
+    .persona-option strong { color: #3b82f6; }
+    .checklist { margin: 12px 0 0 16px; }
+    .checklist li { margin: 6px 0; color: #9ca9b8; font-size: 14px; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+    .criteria-box { background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; }
+    .criteria-box div:first-child { font-weight: 600; color: #3b82f6; font-size: 13px; }
+    .criteria-box div:last-child { color: #9ca9b8; font-size: 13px; margin-top: 6px; }
+    .pricing-section { background: #0f1419; border: 1px solid #1a1f29; border-radius: 6px; padding: 16px; margin: 16px 0; }
+    .pricing-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1a1f29; }
+    .pricing-item:last-child { border-bottom: none; }
+    .pricing-label { color: #9ca9b8; font-size: 14px; }
+    .pricing-value { font-weight: 600; color: #f0f4f8; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><a href="/zh-Hant/">Shipyard</a></div>
+    <nav class="nav">
+      <a href="/en/">EN</a>
+      <a href="/zh-Hant/">繁中</a>
+      <a href="/community/">Get Community</a>
+      <a href="/demo/">Demo</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <h1>Founding Access · Pro Beta</h1>
+    <p class="muted" style="font-size: 16px; font-weight: 500;">
+      自助式 Pro Beta 套件下載。啟動證據匯出、保留審計資料，完全不需上線通話。
+    </p>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:18px; margin:0 0 16px;">您將獲得</h2>
+      <ul class="checklist">
+        <li>✓ Pro 下載（穩定 / 測試 / 內部通道）</li>
+        <li>✓ 可攜套件（run.ps1 / run.sh / run.cmd）與校驗碼</li>
+        <li>✓ 證據輸出：REPORT + SPEC/VERIFY/SHA256SUMS + 檔案雜湊</li>
+        <li>✓ 授權啟用與狀態腳本與每個版本同步</li>
+        <li>✓ 文件、快速上手與故障排除指南隨套件提供</li>
+      </ul>
+
+      <div class="callout" style="margin-top:24px;">
+        <div class="callout-title">支援政策（Beta）</div>
+        <div class="callout-content">
+          <p>僅透過 GitHub Issues / Discussions；請先閱讀文件再提問。</p>
+          <p>無 SLA、無保證回覆時間，無上線或研討會。</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px; margin:28px 0 16px;">定價</h2>
+      <div class="pricing-section">
+        <div class="pricing-item">
+          <span class="pricing-label">訂閱</span>
+          <span class="pricing-value">$299 / 月</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">席次</span>
+          <span class="pricing-value">最多 5 位團隊成員</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">承諾</span>
+          <span class="pricing-value">隨時取消</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">支援</span>
+          <span class="pricing-value">GitHub Issues / Discussions</span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <a id="foundingAccessCTA" href="/zh-Hant/waitlist/?persona=founding-access" class="chip"
+           style="display:inline-block; padding:12px 18px; background:#3b82f6; color:white; text-decoration:none; border-radius:6px; font-weight:600; font-size:15px;">
+          取得 Founding Access
+        </a>
+        <p style="color:#9ca9b8; font-size:13px; margin-top:12px;">填寫表單即可加入自助等候名單與下載 Pro Beta 工具包。</p>
+      </div>
+    </div>
+  </main>
+
+<script>
+(function() {
+  if (window.shipyardTrack) {
+    window.shipyardTrack('founding_access_page_view', {
+      lang: 'zh-Hant',
+      persona: 'founding-access',
+      path: window.location.pathname
+    });
+  }
+
+  var cta = document.getElementById('foundingAccessCTA');
+  if (cta) {
+    cta.addEventListener('click', function() {
+      if (window.shipyardTrack) {
+        window.shipyardTrack('founding_access_start_click', {
+          lang: 'zh-Hant',
+          persona: 'founding-access',
+          path: window.location.pathname
+        });
+      }
+    });
+  }
+})();
+</script>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

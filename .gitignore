@@ -4,6 +4,8 @@
 **/*.bak.*
 *.brand*
 **/*.brand*
+# prevent functions backups from slipping into Pages deploys
+functions/*.bak*
 
 # build artifacts
 dist/
@@ -11,3 +13,4 @@ dist/
 # temp / local scratch
 _tmp/
 reports/
+node_modules/

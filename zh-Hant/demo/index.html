@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-Hant">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipyard — Live Demo</title>
   <link rel="stylesheet" href="/assets/style.css" />
 </head>
-<body class="page-demo" data-lang="en">
+<body class="page-demo" data-lang="zh-Hant">
   <!-- Scroll Progress Bar -->
   <div class="scroll-progress-bar"></div>
 
@@ -18,10 +18,10 @@
         <span>Shipyard</span>
       </div>
       <div class="nav">
-        <a href="/en/">Back to landing</a>
+        <a href="/zh-Hant/">回到主頁</a>
         <div class="lang-switch">
-          <a href="/demo/" class="active">EN</a>
-          <a href="/zh-Hant/demo/">中文</a>
+          <a href="/demo/">EN</a>
+          <a href="/zh-Hant/demo/" class="active">中文</a>
         </div>
       </div>
     </nav>
@@ -29,13 +29,13 @@
     <!-- Demo Hero -->
     <section class="hero reveal">
       <div class="hero-content">
-        <h1>Run a live gate locally</h1>
-        <p class="lead">See exactly what Shipyard does in 2 minutes. No credit card required.</p>
+        <h1>本地執行一個 gate</h1>
+        <p class="lead">看看 Shipyard 在 2 分鐘內做了什麼。無需信用卡。</p>
         
         <div style="display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
-          <span class="chip">🔍 Smoke test</span>
-          <span class="chip">⚙️ Gate execution</span>
-          <span class="chip">📦 Export evidence</span>
+          <span class="chip">🔍 煙霧測試</span>
+          <span class="chip">⚙️ Gate 執行</span>
+          <span class="chip">📦 匯出證據</span>
         </div>
       </div>
     </section>
@@ -44,14 +44,14 @@
     <div class="bento-grid bento-grid-2 reveal" style="margin-top: 40px;">
       <!-- Left: Quickstart -->
       <div class="bento-card">
-        <div class="bento-card-title">Quickstart</div>
-        <p style="color: #9ca9b8; font-size: 14px; margin-bottom: 16px;">Run this in any repo. No setup required.</p>
+        <div class="bento-card-title">快速開始</div>
+        <p style="color: #9ca9b8; font-size: 14px; margin-bottom: 16px;">在任何 repo 中執行。無需設定。</p>
         
         <div class="quickstart">
           <div class="quickstart-header">
             <div class="quickstart-title">shell</div>
-            <button class="copy-btn" id="demoOpenGithubBtn" style="margin-right:8px;">Open GitHub</button>
-            <button class="copy-btn" id="demoCopyBtn">Copy</button>
+            <button class="copy-btn" id="demoOpenGithubBtn" style="margin-right:8px;">開啟 GitHub</button>
+            <button class="copy-btn" id="demoCopyBtn">複製</button>
           </div>
           <div class="quickstart-code" id="demo-quickstart-code">
             <div class="code-line">
@@ -65,7 +65,7 @@
             <div class="code-line">
               <span class="prompt">$</span>
               <span class="command">pnpm dev</span>
-              <span class="comment"># UI on localhost:3000</span>
+              <span class="comment"># UI 在 localhost:3000</span>
             </div>
           </div>
         </div>
@@ -73,14 +73,14 @@
 
       <!-- Right: Expected Output with Tabs -->
       <div class="bento-card">
-        <div class="bento-card-title">Expected output</div>
-        <p style="color: #9ca9b8; font-size: 14px; margin-bottom: 16px;">What happens when you run the gate.</p>
+        <div class="bento-card-title">預期輸出</div>
+        <p style="color: #9ca9b8; font-size: 14px; margin-bottom: 16px;">執行 gate 時發生的事情。</p>
         
         <div class="demo-tabs">
           <div class="demo-tabs-header">
-            <button class="demo-tab-btn active" data-tab="smoke" data-demo-tab="smoke" data-track="tab">Smoke</button>
-            <button class="demo-tab-btn" data-tab="activity" data-demo-tab="activity" data-track="tab">Activity Log</button>
-            <button class="demo-tab-btn" data-tab="bundle" data-demo-tab="bundle" data-track="tab">Bundle</button>
+            <button class="demo-tab-btn active" data-tab="smoke" data-demo-tab="smoke" data-track="tab">煙霧測試</button>
+            <button class="demo-tab-btn" data-tab="activity" data-demo-tab="activity" data-track="tab">活動日誌</button>
+            <button class="demo-tab-btn" data-tab="bundle" data-demo-tab="bundle" data-track="tab">套件</button>
           </div>
           
           <div class="demo-panels">
@@ -123,22 +123,22 @@
 
     <!-- Troubleshooting Row -->
     <div style="margin-top: 48px;">
-      <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #f0f4f8; text-align: center;">Common issues</h2>
+      <h2 style="font-size: 20px; font-weight: 600; margin-bottom: 20px; color: #f0f4f8; text-align: center;">常見問題</h2>
       
       <div class="bento-grid bento-grid-3 reveal-stagger">
         <div class="bento-card">
-          <div class="bento-card-title">Port already in use?</div>
-          <p style="color: #9ca9b8; font-size: 14px;">Shipyard defaults to <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">:8080</code>. Pass <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">--port 9000</code> to use a different port.</p>
+          <div class="bento-card-title">連接埠已在使用中？</div>
+          <p style="color: #9ca9b8; font-size: 14px;">Shipyard 預設使用 <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">:8080</code>。傳遞 <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">--port 9000</code> 來使用不同的連接埠。</p>
         </div>
         
         <div class="bento-card">
-          <div class="bento-card-title">pnpm/npm version?</div>
-          <p style="color: #9ca9b8; font-size: 14px;">We recommend <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">pnpm 8+</code>. If using npm, ensure <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">npm install</code> works.</p>
+          <div class="bento-card-title">pnpm/npm 版本？</div>
+          <p style="color: #9ca9b8; font-size: 14px;">建議 <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">pnpm 8+</code>。如果使用 npm，請確保 <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">npm install</code> 有效。</p>
         </div>
         
         <div class="bento-card">
-          <div class="bento-card-title">Node.js version?</div>
-          <p style="color: #9ca9b8; font-size: 14px;">Requires <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">Node 18+</code>. Check: <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">node --version</code>.</p>
+          <div class="bento-card-title">Node.js 版本？</div>
+          <p style="color: #9ca9b8; font-size: 14px;">需要 <code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">Node 18+</code>。檢查：<code style="color: #3b82f6; background: rgba(59, 130, 246, 0.1); padding: 2px 6px; border-radius: 4px;">node --version</code>。</p>
         </div>
       </div>
     </div>
@@ -146,10 +146,10 @@
     <!-- Bottom CTA Strip -->
     <div class="cta-strip reveal">
       <div>
-        <p style="margin: 0; color: #9ca9b8; font-size: 14px;">Ready to use this in production?</p>
-        <p style="margin: 8px 0 0; font-weight: 600; color: #f0f4f8;">See what's included in the Evidence Pack.</p>
+        <p style="margin: 0; color: #9ca9b8; font-size: 14px;">準備好在生產環境中使用嗎？</p>
+        <p style="margin: 8px 0 0; font-weight: 600; color: #f0f4f8;">查看證據包中包含的內容。</p>
       </div>
-        <a href="/waitlist/?persona=evidence-pack" class="btn btn-primary" id="demoCTABtn" data-track="demo-evidence-pack">Get Evidence Pack</a>
+        <a href="/waitlist/?persona=evidence-pack" class="btn btn-primary" id="demoCTABtn" data-track="demo-evidence-pack">取得證據包</a>
     </div>
 
     <!-- Footer -->

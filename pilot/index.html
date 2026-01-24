@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shipyard — Pilot Program</title>
+  <link rel="stylesheet" href="/assets/style.css" />
+  <style>
+    .persona-option { background: #0f1419; border: 1px solid #1a1f29; border-radius: 6px; padding: 14px; margin: 12px 0; }
+    .persona-option strong { color: #3b82f6; }
+    .checklist { margin: 12px 0 0 16px; }
+    .checklist li { margin: 6px 0; color: #9ca9b8; font-size: 14px; }
+    .criteria-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 16px 0; }
+    .criteria-box { background: rgba(59, 130, 246, 0.05); border-left: 4px solid #3b82f6; padding: 12px; }
+    .criteria-box div:first-child { font-weight: 600; color: #3b82f6; font-size: 13px; }
+    .criteria-box div:last-child { color: #9ca9b8; font-size: 13px; margin-top: 6px; }
+    .pricing-section { background: #0f1419; border: 1px solid #1a1f29; border-radius: 6px; padding: 16px; margin: 16px 0; }
+    .pricing-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #1a1f29; }
+    .pricing-item:last-child { border-bottom: none; }
+    .pricing-label { color: #9ca9b8; font-size: 14px; }
+    .pricing-value { font-weight: 600; color: #f0f4f8; }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><a href="/en/">Shipyard</a></div>
+    <nav class="nav">
+      <a href="/en/">EN</a>
+      <a href="/zh-Hant/">繁中</a>
+      <a href="/community/">Get Community</a>
+      <a href="/demo/">Demo</a>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <h1>Founding Access · Pro Beta</h1>
+    <p class="muted" style="font-size: 16px; font-weight: 500;">
+      Self-serve Pro Beta download. Generate evidence, export bundles, and stay audit-ready without onboarding calls.
+    </p>
+
+    <div style="margin-top:32px;">
+      <h2 style="font-size:18px; margin:0 0 16px;">What you get</h2>
+      <ul class="checklist">
+        <li>✓ Pro downloads in stable, beta, and internal channels</li>
+        <li>✓ Portable bundle (run.ps1 / run.sh / run.cmd) with bundled checksums</li>
+        <li>✓ Evidence outputs: REPORT + SPEC/VERIFY/SHA256SUMS + artifact hashes every run</li>
+        <li>✓ License activation and status scripts distributed with each build</li>
+        <li>✓ Docs, quickstart, and troubleshooting guides linked from the bundle</li>
+      </ul>
+
+      <div class="callout" style="margin-top:24px;">
+        <div class="callout-title">Support Policy (Beta)</div>
+        <div class="callout-content">
+          <p>GitHub Issues &amp; Discussions only; check docs before asking.</p>
+          <p>No SLA, no response-time guarantees, and no onboarding or workshops.</p>
+        </div>
+      </div>
+
+      <h2 style="font-size:18px; margin:28px 0 16px;">Pricing</h2>
+      <div class="pricing-section">
+        <div class="pricing-item">
+          <span class="pricing-label">Subscription</span>
+          <span class="pricing-value">$299 / month</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">Seats</span>
+          <span class="pricing-value">Up to 5 team members</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">Commitment</span>
+          <span class="pricing-value">Cancel anytime</span>
+        </div>
+        <div class="pricing-item">
+          <span class="pricing-label">Support</span>
+          <span class="pricing-value">GitHub Issues &amp; Discussions</span>
+        </div>
+      </div>
+
+      <div style="margin-top:32px;">
+        <a id="foundingAccessCTA" href="/waitlist/?persona=founding-access" class="chip"
+           style="display:inline-block; padding:12px 18px; background:#3b82f6; color:white; text-decoration:none; border-radius:6px; font-weight:600; font-size:15px;">
+          Get Founding Access
+        </a>
+        <p style="color:#9ca9b8; font-size:13px; margin-top:12px;">Join the self-serve waitlist and download the Pro Beta toolkit.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+  (function() {
+    if (window.shipyardTrack) {
+      window.shipyardTrack('founding_access_page_view', {
+        lang: 'en',
+        persona: 'founding-access',
+        path: window.location.pathname
+      });
+    }
+
+    var cta = document.getElementById('foundingAccessCTA');
+    if (cta) {
+      cta.addEventListener('click', function() {
+        if (window.shipyardTrack) {
+          window.shipyardTrack('founding_access_start_click', {
+            lang: 'en',
+            persona: 'founding-access',
+            path: window.location.pathname
+          });
+        }
+      });
+    }
+  })();
+  </script>
+
+  <script src="/assets/app.js"></script>
+</body>
+</html>

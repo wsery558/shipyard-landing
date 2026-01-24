@@ -5,11 +5,15 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipyard — 讓 AI 改動變得敢上線</title>
   <meta name="description" content="交付治理層：Plan → Execute → Verify → Evidence → Release。" />
+  <meta name="shipyard-payment-url" content="https://REPLACE_ME" />
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="alternate" hreflang="en" href="https://shipyard.tsaielectro.com/en/" />
   <link rel="alternate" hreflang="zh-Hant" href="https://shipyard.tsaielectro.com/zh-Hant/" />
 </head>
 <body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress-bar"></div>
+  
   <div class="container">
     <!-- Topbar Navigation -->
     <nav class="topbar">
@@ -31,6 +35,11 @@
       </div>
     </nav>
 
+      <!-- Evidence CTA Row (Chinese) -->
+      <div class="cta-row reveal">
+        <span class="cta-row-label">👇 想要這些格式套用到自己的 stack？</span>
+        <a class="btn btn-primary" href="/waitlist/?persona=evidence-pack" data-track="cta" data-track-type="evidence">取得證據包</a>
+      </div>
     <!-- Hero Section -->
     <section class="hero reveal">
       <div class="hero-content">
@@ -38,9 +47,9 @@
         <p class="lead"><strong>規格先講清楚</strong> → <strong>驗收過得了</strong> → <strong>證據包交得出去</strong></p>
         
         <div class="cta-group">
-          <a class="btn btn-primary" href="/demo/">執行 Demo</a>
-          <a class="btn btn-primary" href="/waitlist/?persona=compliance">加入候補名單</a>
-          <a class="btn btn-secondary" href="/community/" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn btn-primary" href="/waitlist/?persona=evidence-pack" data-track="cta">取得證據包</a>
+          <a id="buyBtnHero" class="btn btn-primary" href="#" target="_blank" style="display:none;" data-track="cta">購買證據包</a>
+          <a class="btn btn-secondary" href="/community/" target="_blank" rel="noreferrer" data-track="cta">GitHub</a>
         </div>
 
         <!-- Quickstart -->
@@ -70,6 +79,58 @@
       </div>
     </section>
 
+    <!-- Founding Access Offer (Chinese) -->
+    <div class="offer-card reveal">
+      <div class="offer-header">
+        <span class="offer-badge">🚀 限時優惠</span>
+      </div>
+      <h2 class="offer-title">Founding Access · Pro Beta</h2>
+      <p class="offer-subtitle">自助 Pro 套件，立即下載合規證據 — 每月 $299（最多 5 個席次）</p>
+      
+      <div class="offer-risk-reversal">
+        <strong>無風險：</strong>隨時取消。無上線通話、無 SLA 限制、無隱性費用。
+      </div>
+      
+      <div class="offer-grid">
+        <div class="offer-item">
+          <div class="offer-item-title">你會得到</div>
+          <div class="offer-item-content">
+            <ul>
+              <li>Pro 下載 + 通道分流（穩定、測試、內部）</li>
+              <li>可攜套件（run.ps1 / run.sh / run.cmd）附帶校驗碼</li>
+              <li>證據輸出（REPORT + SPEC/VERIFY/SHA256SUMS + 檔案雜湊）</li>
+              <li>每個版本附帶授權啟用與狀態腳本</li>
+              <li>文件、快速上手與故障排除指南</li>
+            </ul>
+          </div>
+        </div>
+        
+        <div class="offer-item">
+          <div class="offer-item-title">自助體驗</div>
+          <div class="offer-item-content">
+            <ul>
+              <li>自助產品：下載、執行、驗證與交付由你掌控</li>
+              <li>不需上線通話，直接從套件與文件起步</li>
+              <li>支援僅透過 GitHub Issues 與 Discussions</li>
+              <li>無 SLA，也無保證回覆時間</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      
+      <div class="callout">
+        <div class="callout-title">支援政策（Beta）</div>
+        <div class="callout-content">
+          <p>僅透過 GitHub Issues / Discussions，請先查看文件。</p>
+          <p>不提供 SLA 或回覆時限。</p>
+        </div>
+      </div>
+      
+      <div class="offer-cta-group">
+        <a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=evidence-pack" data-track="offer" data-track-type="evidence">取得證據包</a>
+        <a class="btn btn-secondary" href="/zh-Hant/waitlist/?persona=founding-access" data-track="offer" data-track-type="founding-access">取得 Founding Access</a>
+      </div>
+    </div>
     <!-- Proof You Can Show - Bento Grid -->
     <section id="community-proof" class="reveal">
       <h2>可以拿出來的證據</h2>
@@ -117,6 +178,149 @@
         </div>
       </div>
 
+      <!-- Evidence Specimens Tabs -->
+      <div class="evidence-tabs reveal">
+        <div class="evidence-tabs-header">
+          <button class="evidence-tab-btn active" data-tab="0" data-track="tab">活動匯出 (NDJSON)</button>
+          <button class="evidence-tab-btn" data-tab="1" data-track="tab">證據包</button>
+          <button class="evidence-tab-btn" data-tab="2" data-track="tab">規格異動預覽</button>
+        </div>
+        
+        <div class="evidence-panels">
+          <!-- Activity Export Panel -->
+          <div class="evidence-panel active">
+            <button class="panel-copy-btn" aria-label="複製內容">複製</button>
+            <div class="panel-content"><span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:32:01Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"agent:claude-opus"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"execute_spec"</span><span class="evidence-label">, "result_hash":</span> <span class="evidence-value">"sha256:a3f8e..."</span><span class="evidence-label">, "gate":</span> <span class="evidence-value">"smoke"</span>}</span>
+<span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:32:15Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"gate:lint"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"passed"</span><span class="evidence-label">, "result_hash":</span> <span class="evidence-value">"sha256:7c2b1..."</span><span class="evidence-label">, "errors":</span> <span class="evidence-value">0</span>}</span>
+<span class="evidence-line highlight"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:32:28Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"gate:typecheck"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"passed"</span><span class="evidence-label">, "warnings":</span> <span class="evidence-value">2</span><span class="evidence-label">, "gate":</span> <span class="evidence-value">"typecheck"</span>}</span>
+<span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:32:45Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"gate:unit_tests"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"passed"</span><span class="evidence-label">, "result_hash":</span> <span class="evidence-value">"sha256:e9d4f..."</span><span class="evidence-label">, "duration_ms":</span> <span class="evidence-value">2847</span>}</span>
+<span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:33:01Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"gate:build"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"passed"</span><span class="evidence-label">, "artifact_id":</span> <span class="evidence-value">"build:1.2.3-rc1"</span>}</span>
+<span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:33:18Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"gate:smoke_test"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"passed"</span><span class="evidence-label">, "result_hash":</span> <span class="evidence-value">"sha256:6f1a8..."</span>}</span>
+<span class="evidence-line"><span class="evidence-label">{"time":</span> <span class="evidence-value">"2026-01-24T15:33:35Z"</span><span class="evidence-label">, "actor":</span> <span class="evidence-value">"spec_executor"</span><span class="evidence-label">, "action":</span> <span class="evidence-value">"all_gates_passed"</span><span class="evidence-label">, "status":</span> <span class="evidence-value">"approved_for_release"</span>}</span></div>
+          </div>
+
+          <!-- Evidence Bundle Panel -->
+          <div class="evidence-panel">
+            <button class="panel-copy-btn" aria-label="複製內容">複製</button>
+            <div class="panel-content"><span class="file-tree"><span class="file-entry folder">📦 artifacts/</span>
+<span class="file-entry">  ├── SPEC.md</span>
+<span class="file-entry">  ├── VERIFY_REPORT.md</span>
+<span class="file-entry">  ├── SHA256SUMS.txt</span>
+<span class="file-entry">  ├── build_log.txt</span>
+<span class="file-entry artifact">  ├── shipyard-1.2.3-rc1.tar.gz</span>
+<span class="file-entry artifact">  ├── shipyard-1.2.3-rc1.tar.gz.sig</span>
+<span class="file-entry">  ├── lint_report.json</span>
+<span class="file-entry">  ├── typecheck_report.json</span>
+<span class="file-entry">  ├── test_coverage.html</span>
+<span class="file-entry">  ├── smoke_test_results.json</span>
+<span class="file-entry">  └── audit_trail.ndjson</span></span></div>
+          </div>
+
+          <!-- Spec Vault Diff Panel -->
+          <div class="evidence-panel">
+            <button class="panel-copy-btn" aria-label="複製內容">複製</button>
+            <div class="panel-content"><span class="diff-line changed">spec_version: 1.0 → 1.1</span>
+<span class="diff-line added">+ feature: "ai_change_governance"</span>
+<span class="diff-line added">+ gate.typecheck.enabled: true</span>
+<span class="diff-line added">+ gate.smoke_test.timeout: 30s</span>
+<span class="diff-line changed">gate.build.cache: {"level": "standard"} → {"level": "aggressive"}</span>
+<span class="diff-line removed">- deprecated.old_check_flag: true</span>
+<span class="diff-line added">+ evidence.export_format: ["ndjson", "json"]</span>
+<span class="diff-line added">+ evidence.retention_days: 365</span>
+<span class="diff-line changed">artifact_dir: "./dist" → "./artifacts"</span>
+<span class="diff-line added">+ checksum: "sha256:7f3e9..."</span></span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proof Counters -->
+      <div class="proof-counters reveal-stagger">
+        <div class="counter-card">
+          <div class="counter-value">6</div>
+          <div class="counter-label">閘門強制檢查</div>
+          <div class="counter-meta">lint · 型別檢查 · 單元 · smoke · build · bundle</div>
+          <a class="counter-link" href="/zh-Hant/evidence-pack/#sample-format-activity-log">檢視證據</a>
+        </div>
+        <div class="counter-card">
+          <div class="counter-value">1</div>
+          <div class="counter-label">可攜式套件</div>
+          <div class="counter-meta">run.ps1 · run.sh · run.cmd</div>
+          <a class="counter-link" href="/zh-Hant/evidence-pack/#bundle-structure">檢視證據</a>
+        </div>
+        <div class="counter-card">
+          <div class="counter-value">3</div>
+          <div class="counter-label">合規檔案</div>
+          <div class="counter-meta">SPEC.md · VERIFY_REPORT.md · SHA256SUMS.txt</div>
+          <a class="counter-link" href="/zh-Hant/evidence-pack/#compliance-files">檢視證據</a>
+        </div>
+      </div>
+
+      <!-- Marquee Proof Wall (Chinese) -->
+      <div class="marquee-wall reveal">
+        <div class="marquee-row">
+          <span class="marquee-chip success">✓ 閘門通過</span>
+          <span class="marquee-chip primary">型別檢查:0</span>
+          <span class="marquee-chip success">✓ lint</span>
+          <span class="marquee-chip primary">單元測試:342</span>
+          <span class="marquee-chip success">✓ build:1.2.3</span>
+          <span class="marquee-chip secondary">匯出:ndjson</span>
+          <span class="marquee-chip success">✓ smoke 測試</span>
+          <span class="marquee-chip primary">sha256:a3f8e...</span>
+          <span class="marquee-chip success">✓ 閘門通過</span>
+          <span class="marquee-chip primary">rc:check</span>
+          <span class="marquee-chip success">✓ 驗收報告</span>
+          <span class="marquee-chip secondary">2026-01-24T15:33Z</span>
+          <span class="marquee-chip success">✓ 閘門通過</span>
+          <span class="marquee-chip primary">型別檢查:0</span>
+          <span class="marquee-chip success">✓ lint</span>
+          <span class="marquee-chip primary">單元測試:342</span>
+          <span class="marquee-chip success">✓ build:1.2.3</span>
+          <span class="marquee-chip secondary">匯出:ndjson</span>
+        </div>
+        
+        <div class="marquee-row">
+          <span class="marquee-chip secondary">執行者:agent:claude</span>
+          <span class="marquee-chip primary">動作:執行規格</span>
+          <span class="marquee-chip success">✓ 已批准</span>
+          <span class="marquee-chip primary">產出物:dist/</span>
+          <span class="marquee-chip secondary">時間:28ms</span>
+          <span class="marquee-chip success">✓ 閘門通過</span>
+          <span class="marquee-chip primary">閘門:smoke</span>
+          <span class="marquee-chip secondary">套件:evidence.tar.gz</span>
+          <span class="marquee-chip success">✓ 已交付</span>
+          <span class="marquee-chip primary">雜湊:sha256:7c2b1...</span>
+          <span class="marquee-chip success">✓ 已歸檔</span>
+          <span class="marquee-chip secondary">留存:365天</span>
+          <span class="marquee-chip primary">動作:執行規格</span>
+          <span class="marquee-chip success">✓ 已批准</span>
+          <span class="marquee-chip primary">產出物:dist/</span>
+          <span class="marquee-chip secondary">時間:28ms</span>
+          <span class="marquee-chip success">✓ 閘門通過</span>
+          <span class="marquee-chip primary">閘門:smoke</span>
+        </div>
+        
+        <div class="marquee-row">
+          <span class="marquee-chip primary">規格:v1.1</span>
+          <span class="marquee-chip success">✓ 檢驗和</span>
+          <span class="marquee-chip secondary">sha256:6f1a8...</span>
+          <span class="marquee-chip primary">日誌:完成</span>
+          <span class="marquee-chip success">✓ 已簽署</span>
+          <span class="marquee-chip secondary">簽名:rsa-2048</span>
+          <span class="marquee-chip primary">稽核:軌跡</span>
+          <span class="marquee-chip success">✓ 已封存</span>
+          <span class="marquee-chip secondary">2026-01-24</span>
+          <span class="marquee-chip primary">版本:rc1</span>
+          <span class="marquee-chip success">✓ 就緒</span>
+          <span class="marquee-chip secondary">檢驗和</span>
+          <span class="marquee-chip primary">規格:v1.1</span>
+          <span class="marquee-chip success">✓ 檢驗和</span>
+          <span class="marquee-chip secondary">sha256:6f1a8...</span>
+          <span class="marquee-chip primary">日誌:完成</span>
+          <span class="marquee-chip success">✓ 已簽署</span>
+          <span class="marquee-chip secondary">簽名:rsa-2048</span>
+        </div>
+      </div>
+
       <div class="bento-grid bento-grid-3 reveal-stagger">
         <div class="bento-card">
           <div class="bento-card-icon">📊</div>
@@ -141,41 +345,6 @@
             <p>Spec Vault 可重現：預覽 → 套用 → 匯出 + 可重建備份，並有 smoke E2E</p>
           </div>
         </div>
-      </div>
-
-      <!-- Evidence Specimen -->
-      <div class="evidence-specimen">
-        <div class="evidence-specimen-header">證據匯出範例（活動記錄）</div>
-        <div class="evidence-line">
-          <span class="timestamp">2026-01-24T03:42:18Z</span> 
-          <span class="level-success">[GATE_PASS]</span> 
-          <span class="field">task=</span><span class="value">build</span> 
-          <span class="field">status=</span><span class="value">success</span> 
-          <span class="field">artifacts=</span><span class="value">dist/</span>
-        </div>
-        <div class="evidence-line">
-          <span class="timestamp">2026-01-24T03:42:20Z</span> 
-          <span class="level-success">[GATE_PASS]</span> 
-          <span class="field">task=</span><span class="value">smoke:e2e</span> 
-          <span class="field">status=</span><span class="value">success</span> 
-          <span class="field">endpoints=</span><span class="value">/health,/api/state</span>
-        </div>
-        <div class="evidence-line">
-          <span class="timestamp">2026-01-24T03:42:22Z</span> 
-          <span class="level-info">[EXPORT]</span> 
-          <span class="field">format=</span><span class="value">ndjson</span> 
-          <span class="field">records=</span><span class="value">342</span> 
-          <span class="field">bundle=</span><span class="value">evidence-2026-01-24.tar.gz</span>
-        </div>
-      </div>
-
-      <!-- Visual Proof -->
-      <div class="visual-proof">
-        <h3 class="visual-proof-title">30 秒內展示什麼</h3>
-        <div class="visual-proof-media">
-          <img src="/assets/demo.gif" alt="Shipyard 交付流程展示" loading="lazy" />
-        </div>
-        <p class="visual-proof-caption">終端 → UI → 證據匯出，一次看懂</p>
       </div>
 
       <div class="callout">
@@ -405,5 +574,26 @@
   </div>
 
   <script src="/assets/app.js"></script>
+  <script>
+    // Enable buy button if payment URL is configured
+    (function() {
+      var buyBtn = document.getElementById('buyBtnHero');
+      if (buyBtn && window.SHIPYARD_PAYMENT_URL && !window.SHIPYARD_PAYMENT_URL.includes('REPLACE_ME')) {
+        buyBtn.href = window.SHIPYARD_PAYMENT_URL;
+        buyBtn.style.display = '';
+        buyBtn.addEventListener('click', function() {
+          if (window.shipyardTrack) {
+            window.shipyardTrack('landing_buy_click', {});
+          }
+        });
+      }
+      var foundingBtn = document.querySelector('[data-track-type="founding-access"]');
+      if (foundingBtn && window.shipyardTrack) {
+        foundingBtn.addEventListener('click', function() {
+          window.shipyardTrack('founding_access_click', { lang: 'zh-Hant' });
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
