@@ -1,0 +1,1 @@
+OK: no sensitive patterns | OK: activity_export.json valid JSON
