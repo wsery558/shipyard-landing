@@ -1,0 +1,79 @@
+{
+  "report_version": "1",
+  "system_metadata": {
+    "git_sha": "055b36a3eaddfec9700f1417499ff1c96af37848",
+    "branch": "selfdev/rc2-e2e-evidence-gate",
+    "version": "6.0.0",
+    "channel": "rc",
+    "build_id": "rc2-local",
+    "frameworkVersion": "6.0.0",
+    "frameworkVersionSource": "SHIPYARD_FRAMEWORK_VERSION",
+    "bundleVersion": "0.0.0-rc2",
+    "bundleVersionSource": "SHIPYARD_BUNDLE_VERSION",
+    "bundleBuildId": "rc2-local",
+    "bundleBuildIdSource": "SHIPYARD_BUNDLE_BUILD_ID"
+  },
+  "disclaimer": "This report is evidence-based and does not constitute a compliance certification.",
+  "evidence_artifacts": {
+    "evidence_pack": {
+      "description": "Deterministic package of compliance evidence.",
+      "sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    }
+  },
+  "control_mappings": {
+    "soc2": [
+      {
+        "control_id": "CC8.1",
+        "category": "Access Management",
+        "description": "Access reviews enforce least privilege.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      },
+      {
+        "control_id": "CC7.2",
+        "category": "Access Management",
+        "description": "Logical access follows policy.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      }
+    ],
+    "iso27001": [
+      {
+        "control_id": "A.12.1.2",
+        "category": "Operations",
+        "description": "Documented operational procedures are available.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      },
+      {
+        "control_id": "A.9.2.1",
+        "category": "Access Control",
+        "description": "Access is granted according to business need.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      }
+    ],
+    "nist_csf": [
+      {
+        "control_id": "ID.GV",
+        "category": "Governance",
+        "description": "Governance practices are documented.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      },
+      {
+        "control_id": "PR.AC",
+        "category": "Protective Technologies",
+        "description": "Protective technologies enforce controls.",
+        "evidence_pointers": [
+          "evidence_pack"
+        ]
+      }
+    ]
+  }
+}
