@@ -48,6 +48,15 @@
     <section class="hero reveal">
       <div class="hero-content">
         <h1>Shipyard：規格是契約，驗收是入口，證據包才算交付</h1>
+<!-- auto: hero-oneliner v1 -->
+<p class="subhead">
+  AI 改動交付治理：<span class="mono">Spec → Verify → Evidence</span>
+</p>
+<p class="muted" style="margin-top:8px;">
+  預設在本機執行，產出可匯出的證據包，讓交付更好驗收、更好追溯（不做合規保證用語）。
+</p>
+<!-- /auto: hero-oneliner v1 -->
+
         <p class="lead"><strong>規格先講清楚</strong> → <strong>驗收過得了</strong> → <strong>證據包交得出去</strong></p>
         
         <div class="cta-group">
@@ -408,6 +417,19 @@
           provenance + evidence bundle 匯出 + 留存策略，能拿去對內稽核/對外客戶交付。
         </div>
       </div>
+      <!-- EVIDENCE_LINKS_START -->
+      <div class="callout evidence-links" data-evidence-base="/evidence/rc-2/rc-local-XYZ">
+        <div class="callout-title">RC-2 證據連結</div>
+        <div class="callout-content">
+          <ul class="bento-card-list">
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMPLIANCE_REPORT.md">每次建置的 Compliance report（可驗證）</a></li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMMERCIAL_REPORT.md">Release 受 Commercial Acceptance 保護</a></li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/activity_export.json">Audit export 可驗證</a> (<a class="evidence-link-secondary" href="/evidence/rc-2/rc-local-XYZ/activity_event.schema.json">Schema</a>)</li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/GATE_REPORT.md">Product gates 通過</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- EVIDENCE_LINKS_END -->
     </section>
 
     <!-- Agency Section -->
@@ -556,6 +578,78 @@
         </div>
       </div>
     </section>
+
+<!-- auto: credibility-pack v1 -->
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">怎麼運作</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">1) Spec（規格）</div><div class="muted" style="margin-top:6px;">把「什麼叫完成」寫清楚，版本化、可審查。</div></div>
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">2) Verify（驗證）</div><div class="muted" style="margin-top:6px;">在本機跑煙霧測試與 gates，留下可重跑的紀錄。</div></div>
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">3) Evidence（證據）</div><div class="muted" style="margin-top:6px;">匯出 Evidence Pack：活動日誌、工件樹、checksums。</div></div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">適合誰</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">顧問 / Agency</div>
+      <div class="muted" style="margin-top:6px;"><b>你在怕什麼：</b>交付爭議、驗收卡住、重工、範疇說不清。</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard 給你什麼：</b>客戶可驗證的交付包（可重跑、可追溯）。</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=agency">加入 waitlist</a></div>
+    </div>
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">合規 / GRC</div>
+      <div class="muted" style="margin-top:6px;"><b>你在怕什麼：</b>證據缺漏、改動不可驗證、稽核時找不到鏈路。</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard 給你什麼：</b>跑了什麼、改了什麼、checksum 是什麼，一次打包。</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=compliance">加入 waitlist</a></div>
+    </div>
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">Staff / Architect</div>
+      <div class="muted" style="margin-top:6px;"><b>你在怕什麼：</b>架構漂移、隱性回歸、只能靠口頭說「我有測」。</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard 給你什麼：</b>可重跑的 gates + 可回看證據，讓交付能被審查。</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=staff">加入 waitlist</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">創始試點（Design Partners）</h2>
+  <div class="card" style="padding:14px;">
+    <div class="muted">名額有限。價格會和試點夥伴一起定（不做合規/SLA 保證用語）。</div>
+    <div style="margin-top:10px;font-weight:700;">你會拿到</div>
+    <ul style="margin:8px 0 0 18px;">
+      <li>Evidence Pack 範本 + checksum 慣例</li>
+      <li>建議 gates 設定指南（煙霧測試、活動日誌、打包）</li>
+      <li>可直接拿去交付的 sample exports</li>
+    </ul>
+    <div style="margin-top:12px;">
+      <a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=founding">申請試點</a>
+      <a class="btn" href="/zh-Hant/trust/" style="margin-left:10px;">信任中心</a>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">Community vs Pro</h2>
+  <div class="card" style="padding:14px; overflow:auto;">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">能力</th>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">Community</th>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">Pro</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">本機執行</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">煙霧測試 + 基本 gates</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">Evidence Pack 匯出</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;">雲端托管留存 / SaaS</td><td style="padding:10px;">—</td><td style="padding:10px;">🟡 planned</td></tr>
+      </tbody>
+    </table>
+    <div class="muted" style="margin-top:10px;">Roadmap 內容明確標記 planned / in progress，避免誤導。</div>
+  </div>
+</section>
+<!-- /auto: credibility-pack v1 -->
 
     <!-- Bottom CTA -->
     <div class="bottom-cta">

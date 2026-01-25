@@ -48,6 +48,15 @@
     <section class="hero reveal">
       <div class="hero-content">
         <h1>Shipyard: delivery governance for AI changes</h1>
+<!-- auto: hero-oneliner v1 -->
+<p class="subhead">
+  Delivery governance for AI changes: <span class="mono">Spec → Verify → Evidence</span>.
+</p>
+<p class="muted" style="margin-top:8px;">
+  Local-first by default. Exportable evidence for handoffs and auditability (without compliance guarantees).
+</p>
+<!-- /auto: hero-oneliner v1 -->
+
         <p class="lead">Spec is the contract → Verification is the gate → Evidence is the deliverable.</p>
         
         <div class="cta-group">
@@ -408,6 +417,19 @@
           Provenance + evidence bundle export + retention you can show to auditors &amp; clients.
         </div>
       </div>
+      <!-- EVIDENCE_LINKS_START -->
+      <div class="callout evidence-links" data-evidence-base="/evidence/rc-2/rc-local-XYZ">
+        <div class="callout-title">RC-2 Evidence Links</div>
+        <div class="callout-content">
+          <ul class="bento-card-list">
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMPLIANCE_REPORT.md">Compliance report generated per build</a></li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMMERCIAL_REPORT.md">Release protected by commercial acceptance</a></li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/activity_export.json">Audit export available (verifiable)</a> (<a class="evidence-link-secondary" href="/evidence/rc-2/rc-local-XYZ/activity_event.schema.json">Schema</a>)</li>
+            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/GATE_REPORT.md">Product gates pass</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- EVIDENCE_LINKS_END -->
     </section>
 
     <!-- Agency Section -->
@@ -556,6 +578,79 @@
         </div>
       </div>
     </section>
+
+<!-- auto: credibility-pack v1 -->
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">How it works</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;">
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">1) Spec</div><div class="muted" style="margin-top:6px;">Write what "done" means. Keep it versioned and reviewable.</div></div>
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">2) Verify</div><div class="muted" style="margin-top:6px;">Run smoke tests and gates locally. Capture deterministic logs.</div></div>
+    <div class="card" style="padding:14px;"><div style="font-weight:700;">3) Evidence</div><div class="muted" style="margin-top:6px;">Export an Evidence Pack: activity log, artifacts tree, and checksums.</div></div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">Who it's for</h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;">
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">Consultant / Agency</div>
+      <div class="muted" style="margin-top:6px;"><b>You worry about:</b> disputes, approvals, rework, scope ambiguity.</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard gives:</b> an exportable handoff package your client can verify.</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/waitlist/?persona=agency">Join waitlist</a></div>
+    </div>
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">Compliance / GRC</div>
+      <div class="muted" style="margin-top:6px;"><b>You worry about:</b> missing evidence and unverifiable changes.</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard gives:</b> a trace of what ran, what changed, and checksums.</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/waitlist/?persona=compliance">Join waitlist</a></div>
+    </div>
+    <div class="card" style="padding:14px;">
+      <div style="font-weight:700;">Staff / Architect</div>
+      <div class="muted" style="margin-top:6px;"><b>You worry about:</b> drift, regressions, "works on my machine".</div>
+      <div class="muted" style="margin-top:6px;"><b>Shipyard gives:</b> repeatable gates + evidence you can review later.</div>
+      <div style="margin-top:10px;"><a class="btn btn-primary" href="/waitlist/?persona=staff">Join waitlist</a></div>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">Founding Pilot (Design Partners)</h2>
+  <div class="card" style="padding:14px;">
+    <div class="muted">Limited seats. Pricing is finalized with pilot partners (no compliance/SLA promises).</div>
+    <div style="margin-top:10px;font-weight:700;">What you get</div>
+    <ul style="margin:8px 0 0 18px;">
+      <li>Evidence Pack template + checksum conventions</li>
+      <li>Recommended gates setup guide (smoke, activity log, bundle)</li>
+      <li>Sample exports you can use in real handoffs</li>
+    </ul>
+    <div style="margin-top:12px;">
+      <a class="btn btn-primary" href="/waitlist/?persona=founding">Apply for pilot</a>
+      <a class="btn" href="/trust/" style="margin-left:10px;">Trust Center</a>
+    </div>
+  </div>
+</section>
+
+<section style="margin-top:26px;">
+  <h2 style="margin:0 0 12px;">Community vs Pro</h2>
+  <div class="card" style="padding:14px; overflow:auto;">
+    <table style="width:100%;border-collapse:collapse;">
+      <thead><tr>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">Capability</th>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">Community</th>
+        <th style="text-align:left;padding:10px;border-bottom:1px solid rgba(255,255,255,.12);">Pro</th>
+      </tr></thead>
+      <tbody>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">Run locally</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">Smoke + basic gates</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">Evidence Pack export</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">✅</td></tr>
+        <tr><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">Team roles / approvals</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">—</td><td style="padding:10px;border-bottom:1px solid rgba(255,255,255,.08);">🟡 planned</td></tr>
+        <tr><td style="padding:10px;">Hosted retention / SaaS</td><td style="padding:10px;">—</td><td style="padding:10px;">🟡 planned</td></tr>
+      </tbody>
+    </table>
+    <div class="muted" style="margin-top:10px;">Roadmap items are explicitly labeled as planned/in progress.</div>
+  </div>
+</section>
+<!-- /auto: credibility-pack v1 -->
 
     <!-- Bottom CTA -->
     <div class="bottom-cta">
