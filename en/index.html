@@ -98,7 +98,7 @@
         <span class="offer-badge">🚀 Limited Time</span>
       </div>
       <h2 class="offer-title">Founding Access · Pro Beta</h2>
-      <p class="offer-subtitle">Self-serve Pro bundle for compliance-ready evidence — $299 / month (up to 5 seats)</p>
+      <p class="offer-subtitle">Founding Pilot (Design Partners) — starting at $299/mo (limited seats). Final pricing TBD.</p>
       
       <div class="offer-risk-reversal">
         <strong>Risk-free:</strong> Cancel anytime. No onboarding calls, no added SLA gates, no hidden fees.
@@ -239,7 +239,6 @@
 <span class="diff-line changed">gate.build.cache: {"level": "standard"} → {"level": "aggressive"}</span>
 <span class="diff-line removed">- deprecated.old_check_flag: true</span>
 <span class="diff-line added">+ evidence.export_format: ["ndjson", "json"]</span>
-<span class="diff-line added">+ evidence.retention_days: 365</span>
 <span class="diff-line changed">artifact_dir: "./dist" → "./artifacts"</span>
 <span class="diff-line added">+ checksum: "sha256:7f3e9..."</span></span></div>
           </div>
@@ -418,14 +417,14 @@
         </div>
       </div>
       <!-- EVIDENCE_LINKS_START -->
-      <div class="callout evidence-links" data-evidence-base="/evidence/rc-2/rc-local-XYZ">
+      <div class="callout evidence-links" data-evidence-base="/evidence/sample/rc2">
         <div class="callout-title">RC-2 Evidence Links</div>
         <div class="callout-content">
           <ul class="bento-card-list">
-            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMPLIANCE_REPORT.md">Compliance report generated per build</a></li>
-            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/COMMERCIAL_REPORT.md">Release protected by commercial acceptance</a></li>
-            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/activity_export.json">Audit export available (verifiable)</a> (<a class="evidence-link-secondary" href="/evidence/rc-2/rc-local-XYZ/activity_event.schema.json">Schema</a>)</li>
-            <li><a class="evidence-link" href="/evidence/rc-2/rc-local-XYZ/GATE_REPORT.md">Product gates pass</a></li>
+            <li><a class="evidence-link" href="/evidence/sample/rc2/COMPLIANCE_REPORT.md">Compliance report generated per build</a></li>
+            <li><a class="evidence-link" href="/evidence/sample/rc2/COMMERCIAL_REPORT.md">Release protected by commercial acceptance</a></li>
+            <li><a class="evidence-link" href="/evidence/sample/rc2/activity_export.json">Audit export available (verifiable)</a> (<a class="evidence-link-secondary" href="/evidence/sample/rc2/activity_event.schema.json">Schema</a>)</li>
+            <li><a class="evidence-link" href="/evidence/sample/rc2/GATE_REPORT.md">Product gates pass</a></li>
           </ul>
         </div>
       </div>
@@ -485,7 +484,7 @@
     <!-- Compare Section -->
     <section id="compare" class="reveal">
       <h2>Community vs Pro</h2>
-      <p class="section-lead">Start with Community (open-source). Upgrade to Pro when you need compliance-grade evidence export and retention.</p>
+      <p class="section-lead">Start with Community (open-source). Upgrade to Pro when you need audit-friendly evidence export and retention.</p>
 
       <table class="compare-table">
         <thead>
