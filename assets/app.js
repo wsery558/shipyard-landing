@@ -809,3 +809,33 @@ shipyardLanding_onReady(function(){
   }
 })();
  // /auto: demo-jump-bindings v1
+
+
+// auto: lang-switch v1
+(function(){
+  try{
+    var path = location.pathname || "/";
+    var qs = location.search || "";
+    var hash = location.hash || "";
+    var isZH = path.indexOf("/zh-Hant/") === 0;
+
+    var enPath = isZH ? path.replace(/^\/zh-Hant/, "") : path;
+    if (!enPath) enPath = "/";
+
+    var zhPath = isZH ? path : ("/zh-Hant" + (path === "/" ? "/" : path));
+
+    function norm(u){ return (u || "/") + qs + hash; }
+
+    // only touch the header/topbar area if present (safer)
+    var root = document.querySelector("header") || document.body;
+
+    var links = root.querySelectorAll("a");
+    links.forEach(function(a){
+      var t = (a.textContent || "").trim();
+      if (t === "EN") a.setAttribute("href", norm(enPath));
+      if (t === "繁中" || t === "繁體" || t === "中文") a.setAttribute("href", norm(zhPath));
+    });
+  }catch(e){}
+})();
+// /auto: lang-switch v1
+
