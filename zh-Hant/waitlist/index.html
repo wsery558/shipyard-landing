@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shipyard — 等候名單</title>
   <link rel="stylesheet" href="/assets/style.css" />
+
+<!-- auto: waitlist-mini-card-css v1 -->
+<style>
+  .mini-card{
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:14px;
+    padding:12px 12px;
+    background: rgba(255,255,255,.03);
+  }
+</style>
+<!-- /auto: waitlist-mini-card-css v1 -->
+
+<!-- auto: waitlist-iframe-polish v1 -->
+<style>
+  @media (max-width: 720px){
+    #waitlistFrame{ height: 820px !important; }
+  }
+</style>
+<!-- /auto: waitlist-iframe-polish v1 -->
 </head>
 <body>
   <header class="top">
@@ -27,11 +46,38 @@
   <main class="wrap section">
     <h1>加入等候名單</h1>
 <!-- auto: waitlist-form v3 -->
+
+<!-- auto: waitlist-copy v1 -->
+<section class="card" data-auto="waitlist-copy-v1" style="margin-top:14px;">
+  <h2 style="margin:0 0 10px;">這份等候名單是做什麼用？</h2>
+  <p class="muted" style="margin:0 0 12px; line-height:1.7;">
+    Shipyard 的核心是 <b>可驗證交付</b>：Spec → Verify → Evidence。
+    這份表單是為了理解你的 <b>交付 / 驗收</b> 場景，我們回覆時才能直接給你可用的下一步。
+  </p>
+
+  <div style="display:grid; gap:10px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+    <div class="mini-card">
+      <div class="muted"><b>你可能正在怕</b></div>
+      <div class="muted" style="line-height:1.7;">交付時證據不足、變更不可追、客戶扯皮、重跑結果對不起來。</div>
+    </div>
+    <div class="mini-card">
+      <div class="muted"><b>你會收到什麼</b></div>
+      <div class="muted" style="line-height:1.7;">一封短回覆：建議的 gates、證據格式、以及可直接套用的模板。</div>
+    </div>
+    <div class="mini-card">
+      <div class="muted"><b>界線先講清楚</b></div>
+      <div class="muted" style="line-height:1.7;">不做合規保證；也不承諾導入一定成功或代客施工。</div>
+    </div>
+  </div>
+</section>
+<!-- /auto: waitlist-copy v1 -->
+
 <section class="card" data-auto="waitlist-form-v3" style="margin-top:16px;">
   <h2 style="margin:0 0 10px;">加入等候名單（2 分鐘）</h2>
   <p class="muted" style="margin:0 0 12px; line-height:1.7;">大約 2 分鐘。我們只問「場景 + 症狀」，讓我們回覆時能直接給你可用的下一步。</p>
 
   <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.10);">
+    <div class="muted" style="margin:10px 0 8px;">↓ Form below</div>
     <iframe id="waitlistFrame"
       src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
       style="width:100%; height:980px; border:0;"
