@@ -19,13 +19,50 @@
       <a href="/en/">EN</a>
       <a href="/zh-Hant/">繁中</a>
       <a href="/community/">Get Community</a>
-      <a href="/demo/">Demo</a>
+      <a href="/zh-Hant/demo/">Demo</a>
       <a href="/zh-Hant/trust/">信任中心</a>
     </nav>
   </header>
 
   <main class="wrap section">
     <h1>加入等候名單</h1>
+<!-- auto: waitlist-form v3 -->
+<section class="card" data-auto="waitlist-form-v3" style="margin-top:16px;">
+  <h2 style="margin:0 0 10px;">加入等候名單（2 分鐘）</h2>
+  <p class="muted" style="margin:0 0 12px; line-height:1.7;">大約 2 分鐘。我們只問「場景 + 症狀」，讓我們回覆時能直接給你可用的下一步。</p>
+
+  <div style="border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.10);">
+    <iframe id="waitlistFrame"
+      src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
+      style="width:100%; height:980px; border:0;"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+
+  <p class="muted" style="margin:10px 0 0; line-height:1.7;">
+    如果表單沒有載入：<a href="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform" target="_blank" rel="noopener">點這裡用新分頁開啟</a>
+  </p>
+</section>
+<!-- /auto: waitlist-form v3 -->
+
+
+<!-- auto: waitlist-form v2 -->
+<section class="card" style="margin-top:16px;">
+  <div style="display:flex; gap:16px; flex-wrap:wrap; align-items:flex-start;">
+    <div style="flex:1 1 360px; min-width:280px;">
+      <h2 style="margin:0 0 8px;">填表加入等候名單</h2>
+      <p class="muted" style="margin:0 0 10px;">如果你的環境擋 iframe，可以用新分頁打開表單： <a href="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true" target="_blank" rel="noopener">用新分頁開表單</a></p>
+      <p class="muted" style="margin:0;">我們只問「場景」與「症狀」，用來把你分流到合適的回覆與 demo。</p>
+    </div>
+    <div style="flex:1 1 560px; min-width:320px;">
+      <div style="border:1px solid rgba(255,255,255,.10); border-radius:14px; overflow:hidden; background:rgba(0,0,0,.18);">
+        
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /auto: waitlist-form v2 -->
+
 
 <!-- auto: waitlist-explain v1 -->
 <section class="card" style="margin-top:16px;">
@@ -41,6 +78,49 @@
   </p>
 </section>
 <!-- /auto: waitlist-explain v1 -->
+
+<!-- auto: waitlist-layout v1 -->
+<div style="display:grid; grid-template-columns: 1.05fr 0.95fr; gap: 18px; align-items:start; margin-top: 18px;">
+  <div>
+    <div class="card">
+      <h2 style="margin:0 0 10px;">先選一個路徑</h2>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a class="chip chip-btn" href="/zh-Hant/waitlist/?persona=evidence-pack" data-track="waitlist-path">📦 Evidence Pack</a>
+        <a class="chip chip-btn" href="/zh-Hant/waitlist/?persona=founding" data-track="waitlist-path">🚩 Founding Pilot</a>
+      </div>
+
+      <div class="muted" style="margin-top:12px;">或先選你的角色，我們會用「交付語言」回覆你下一步。</div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+        <a class="chip chip-btn" href="/zh-Hant/waitlist/?persona=agency" data-track="waitlist-persona">Consultant / Agency</a>
+        <a class="chip chip-btn" href="/zh-Hant/waitlist/?persona=compliance" data-track="waitlist-persona">Compliance / GRC</a>
+        <a class="chip chip-btn" href="/zh-Hant/waitlist/?persona=staff" data-track="waitlist-persona">Staff / Architect</a>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h2 style="margin:0 0 10px;">我們只問「場景」與「症狀」</h2>
+      <p class="muted" style="margin:0 0 10px;">不問你想要什麼功能；我們只收集可用訊號（交付場景 + 失敗症狀）。</p>
+      <ul style="margin:0; padding-left:18px; line-height:1.8;">
+        <li>你是：Solo / Agency / In-house</li>
+        <li>你現在用什麼：Cursor / Copilot / Claude Code / …</li>
+        <li>最痛的是：證據 / 驗收 / 成本 / 卡住 loop / 合規審查</li>
+        <li>交付場景：client handoff / internal release</li>
+        <li>環境：cloud / on-prem / air-gapped</li>
+        <li>可接受價位：用區間選項</li>
+      </ul>
+      <p class="muted" style="margin-top:10px;">
+        隱私說明：我們只用你的 email 回覆 Shipyard 相關事務。詳情：<a href="/zh-Hant/trust/privacy/">隱私</a>。
+      </p>
+    </div>
+  </div>
+
+  <div class="card" style="padding:0; overflow:hidden;">
+    
+  </div>
+</div>
+<!-- /auto: waitlist-layout v1 -->
+
 <!-- auto: waitlist-questions v1 -->
 <section style="margin-top:18px;">
   <h2 style="margin:0 0 10px;">我們會問哪些問題？</h2>
@@ -67,14 +147,14 @@
               <div class="callout" style="margin:14px 0;">
                 <strong>選擇方向</strong>
                 <div style="height:10px"></div>
-                <a class="chip" href="/waitlist/?persona=evidence-pack">📦 Evidence Pack</a>
-                <a class="chip" href="/waitlist/?persona=founding-access">🚩 Founding Access</a>
+                <a class="chip" href="/zh-Hant/waitlist/?persona=evidence-pack">📦 Evidence Pack</a>
+                <a class="chip" href="/zh-Hant/waitlist/?persona=founding-access">🚩 Founding Access</a>
                 <div style="height:10px"></div>
                 <span class="muted">或選擇角色導向：</span>
                 <div style="height:8px"></div>
-                <a class="chip" href="/waitlist/?persona=consultant">Consultant / Agency</a>
-                <a class="chip" href="/waitlist/?persona=compliance">Compliance / GRC</a>
-                <a class="chip" href="/waitlist/?persona=staff">Staff / Architect</a>
+                <a class="chip" href="/zh-Hant/waitlist/?persona=consultant">Consultant / Agency</a>
+                <a class="chip" href="/zh-Hant/waitlist/?persona=compliance">Compliance / GRC</a>
+                <a class="chip" href="/zh-Hant/waitlist/?persona=staff">Staff / Architect</a>
               </div>
             </div>
           </div>
@@ -85,7 +165,7 @@
               <p>NDJSON 日誌、SPEC + VERIFY 報告，以及簽名工件，讓稽核端可直接驗證。</p>
               <div class="cta-group" style="margin-top: var(--space-3); flex-wrap: wrap;">
                 <a class="btn btn-primary" href="/zh-Hant/waitlist/?persona=evidence-pack#waitlist-form" data-track="cta" data-track-type="evidence-pack">加入等候名單</a>
-                <a class="btn btn-secondary" href="/demo/" data-track="cta" data-track-type="demo">查看示範</a>
+                <a class="btn btn-secondary" href="/zh-Hant/demo/" data-track="cta" data-track-type="demo">查看示範</a>
               </div>
               <details style="margin-top: var(--space-4);">
                 <summary>檔案清單</summary>
@@ -124,8 +204,7 @@
       </aside>
       <section class="persona-right">
         <div class="form-card" id="waitlist-form">
-          <iframe id="waitlistFrame" src="https://docs.google.com/forms/d/e/1FAIpQLScAX9lV6OT7Fu0oaZKsnI7NCU55L-brcmG6_gHagOMKf5AZ4w/viewform?embedded=true"
-                  title="Shipyard waitlist"></iframe>
+          
         </div>
       </section>
     </div>

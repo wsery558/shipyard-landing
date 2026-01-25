@@ -1,10 +1,7 @@
 {
   "version": 1,
   "include": [
-    "/__track",
-    "/__track/*",
-    "/__track_view",
-    "/__track_view/*"
+    "/*"
   ],
   "exclude": [
     "/evidence/*"
