@@ -1,0 +1,10 @@
+{
+  "label": "after",
+  "git_sha": "f70fb2e2acabb685d6368d052de71ac02d1ed740",
+  "channel": "rc",
+  "build_id": "rc-local-f70fb2e",
+  "pass": true,
+  "failed_tests_count": 0,
+  "total_tests_count": 1,
+  "server_mode": "stub"
+}

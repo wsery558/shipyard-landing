@@ -1,0 +1,76 @@
+{
+  "tag": "rc-2",
+  "build_id": "rc-local-f70fb2e",
+  "items": [
+    {
+      "path": "commercial/COMMERCIAL_REPORT.md",
+      "size": 2946,
+      "sha256": "e1b7746c2504249e9c70382ba43d9af392e0c2fa5099d05e84532da4cb841ae5"
+    },
+    {
+      "path": "compliance/COMPLIANCE_REPORT.json",
+      "size": 2631,
+      "sha256": "2a580717e829cf4d1bb9edd0309f6afb6411469624ce4313bb6e951b83efcfd4"
+    },
+    {
+      "path": "compliance/COMPLIANCE_REPORT.md",
+      "size": 1523,
+      "sha256": "4dccee1abc18bb86971f4d70a56ef05f21b686b0d805e05e656abab7622f66a5"
+    },
+    {
+      "path": "gates/artifacts/audit/activity_export.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "gates/artifacts/audit/activity_export.ndjson",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "gates/artifacts/audit/RETENTION.txt",
+      "size": 25,
+      "sha256": "999f61d845dbfbe527f7b02746d7802e9449d8167d633cebb71ddca16ab3cd0d"
+    },
+    {
+      "path": "gates/artifacts/audit/VERIFY.txt",
+      "size": 63,
+      "sha256": "203bbdbe850d8633ee4e3d44ef0547f3d17efe1bc7afb256ca533a86b8c620bf"
+    },
+    {
+      "path": "gates/artifacts/e2e/after_pass_trace.zip",
+      "size": 14759,
+      "sha256": "d69bded91f035dbccf53ebcdf351ee53125a2c28528006ba20fd112f428892b7"
+    },
+    {
+      "path": "gates/artifacts/e2e/after_pass_video.webm",
+      "size": 15118,
+      "sha256": "c8d2444572db0fe99986bde31f6d42dc8e0cf5a88b95be7b6beab26177513ad9"
+    },
+    {
+      "path": "gates/artifacts/e2e/before_fail_trace.zip",
+      "size": 14745,
+      "sha256": "d88ba9b6cd3c3374e86d3e76afe0a4f56de5ea3646123c0c262bbd4d9f04cf7b"
+    },
+    {
+      "path": "gates/artifacts/e2e/before_fail_video.webm",
+      "size": 15118,
+      "sha256": "554d68db981a89f3ab7d97415493a6d8f76a87f0884f48c173f5504f2dd623b7"
+    },
+    {
+      "path": "gates/artifacts/e2e/summary.json",
+      "size": 227,
+      "sha256": "fb76d6a3b155fbcad7c6658784f780fd1dfe73d3b5de8786c261e0db8462a640"
+    },
+    {
+      "path": "gates/artifacts/e2e/VERIFY.txt",
+      "size": 529,
+      "sha256": "8139b8cf51fa0ecdbbae142ae55ccf446749a6118ce5e343286f7bcb9c6696cb"
+    },
+    {
+      "path": "gates/GATE_REPORT.md",
+      "size": 887,
+      "sha256": "6c26f77989f0735c0461c050b86e114c608a7357a5f8d4640a09c20d4363bfc0"
+    }
+  ]
+}
