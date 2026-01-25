@@ -7,6 +7,71 @@
   }
 })();
 
+// shipyard:evidence-manifest:v1
+(function () {
+  function onReady(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+  }
+
+  var REL_PATHS = {
+    compliance_md: "compliance/COMPLIANCE_REPORT.md",
+    commercial_md: "commercial/COMMERCIAL_REPORT.md",
+    audit_json: "gates/artifacts/audit/activity_export.json",
+    audit_schema: "gates/artifacts/audit/activity_export.schema.json",
+    gate_md: "gates/GATE_REPORT.md"
+  };
+
+  function joinBase(base, rel) {
+    return base.replace(/\/$/, "") + "/" + rel;
+  }
+
+  onReady(function () {
+    var callouts = document.querySelectorAll(".evidence-links[data-evidence-manifest]");
+    if (!callouts.length) return;
+
+    callouts.forEach(function (callout) {
+      var manifestUrl = callout.getAttribute("data-evidence-manifest");
+      var tag = callout.getAttribute("data-evidence-tag");
+      var buildId = callout.getAttribute("data-evidence-build-id");
+      var base = callout.getAttribute("data-evidence-base");
+
+      if (tag && buildId) {
+        base = "/evidence/" + tag + "/" + buildId;
+        callout.setAttribute("data-evidence-base", base);
+      }
+
+      callout.querySelectorAll("[data-evidence-build-id]").forEach(function (el) {
+        el.textContent = buildId || "unknown";
+      });
+
+      fetch(manifestUrl, { credentials: "same-origin" })
+        .then(function (res) { return res.ok ? res.json() : null; })
+        .then(function (manifest) {
+          if (!manifest || !Array.isArray(manifest.items)) return;
+          var paths = new Set(manifest.items.map(function (item) { return item.path; }));
+
+          callout.querySelectorAll("[data-evidence-key]").forEach(function (link) {
+            var key = link.getAttribute("data-evidence-key");
+            var rel = REL_PATHS[key];
+            if (!rel) return;
+
+            var schemaWrapper = link.closest(".evidence-schema");
+            if (!paths.has(rel)) {
+              if (schemaWrapper) schemaWrapper.style.display = "none";
+              return;
+            }
+
+            link.setAttribute("href", joinBase(base, rel));
+          });
+        })
+        .catch(function () {
+          // Keep hardcoded links if manifest fetch fails.
+        });
+    });
+  });
+})();
+
 
 // shipyard:demo:init:v1
 (function () {
@@ -838,4 +903,3 @@ shipyardLanding_onReady(function(){
   }catch(e){}
 })();
 // /auto: lang-switch v1
-
