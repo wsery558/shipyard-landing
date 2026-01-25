@@ -1,17 +1,31 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "Shipyard Activity Event",
   "type": "object",
-  "required": ["time", "actor", "action"],
   "properties": {
-    "time": { "type": "string", "format": "date-time" },
-    "actor": { "type": "string" },
-    "action": { "type": "string" },
-    "gate": { "type": "string" },
-    "result_hash": { "type": "string" },
-    "errors": { "type": "integer", "minimum": 0 },
-    "warnings": { "type": "integer", "minimum": 0 },
-    "artifact_id": { "type": "string" },
-    "status": { "type": "string" }
-  }
+    "time": {
+      "type": "string"
+    },
+    "actor": {
+      "type": "string"
+    },
+    "action": {
+      "type": "string"
+    },
+    "gate": {
+      "type": "string"
+    },
+    "result_hash": {
+      "type": "string"
+    },
+    "errors": {
+      "type": "integer"
+    },
+    "warnings": {
+      "type": "integer"
+    }
+  },
+  "required": [
+    "time",
+    "actor",
+    "action"
+  ]
 }

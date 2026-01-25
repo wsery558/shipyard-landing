@@ -89,3 +89,12 @@ if rg -n "${FORBIDDEN_PATTERN}" dist -g'*.{html,js,css}' >/tmp/forbidden_dist.tx
 fi
 
 echo "[OK] dist is clean"
+
+
+# --- copy evidence sample (static) ---
+if [ -d "evidence" ]; then
+  mkdir -p "dist/evidence"
+  cp -a evidence/. dist/evidence/
+fi
+# --- /copy evidence sample ---
+

@@ -1,9 +1,7 @@
-# Commercial Report (Sample)
+# Commercial Acceptance (Sample)
 
-## Acceptance gate
-- The release is considered acceptable **only if**:
-  - All required gates pass (lint/typecheck/unit/build/smoke)
-  - Evidence export is produced and reviewable
+This document illustrates a **commercial acceptance gate** used in delivery workflows.
 
-## Notes
-- This is a sample template to demonstrate "commercial acceptance" as a gate.
+- Purpose: prevent “it ran on my machine” handoffs.
+- Output: a human-readable acceptance summary tied to the evidence bundle.
+- Note: This is a sample. Your actual acceptance criteria should be defined in your spec.

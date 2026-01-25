@@ -1,16 +1,12 @@
 # Gate Report (Sample)
 
-## Summary
-- status: PASS
-- required gates: lint, typecheck, unit_tests, build, smoke_test
-- evidence export: generated
+Status: **PASS**
 
-## Gates
-- lint: PASS
-- typecheck: PASS (warnings present)
-- unit_tests: PASS
-- build: PASS
-- smoke_test: PASS
+Gates executed:
+- lint: pass
+- typecheck: pass (warnings: 2)
+- unit_tests: pass
+- build: pass
+- smoke_test: pass
 
-## Artifacts (sample)
-- bundle: evidence.tar.gz (sample label)
+This is a sample report. Real outputs should be generated per run and attached to the evidence bundle.

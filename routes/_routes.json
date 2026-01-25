@@ -6,5 +6,7 @@
     "/__track_view",
     "/__track_view/*"
   ],
-  "exclude": []
+  "exclude": [
+    "/evidence/*"
+  ]
 }

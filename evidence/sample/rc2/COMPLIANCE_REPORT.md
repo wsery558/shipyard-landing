@@ -1,7 +1,7 @@
 # Compliance Report (Sample)
 
 This is a **sample evidence pack** generated from a demo run.
-It is intended to show *what* can be exported for auditability and handoffs.
+It shows *what* can be exported for auditability and client handoffs.
 
 ## What this is
 - A redacted, exportable snapshot of execution evidence:

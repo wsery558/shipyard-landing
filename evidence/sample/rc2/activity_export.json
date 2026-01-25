@@ -1,10 +1,10 @@
 [
   {
     "time": "2026-01-24T15:32:01Z",
-    "actor": "agent:executor",
+    "actor": "agent:demo",
     "action": "execute_spec",
-    "gate": "smoke",
-    "result_hash": "sha256:a3f8e..."
+    "result_hash": "sha256:a3f8e...",
+    "gate": "smoke"
   },
   {
     "time": "2026-01-24T15:32:15Z",
@@ -18,25 +18,12 @@
     "actor": "gate:typecheck",
     "action": "passed",
     "warnings": 2,
-    "result_hash": "sha256:1b9aa..."
-  },
-  {
-    "time": "2026-01-24T15:32:45Z",
-    "actor": "gate:unit_tests",
-    "action": "passed",
-    "errors": 0,
-    "result_hash": "sha256:e9d4f..."
-  },
-  {
-    "time": "2026-01-24T15:33:01Z",
-    "actor": "gate:build",
-    "action": "passed",
-    "artifact_id": "build:sample-rc2"
+    "gate": "typecheck"
   },
   {
     "time": "2026-01-24T15:33:35Z",
     "actor": "spec_executor",
     "action": "all_gates_passed",
-    "status": "approved_for_release"
+    "gate": "release"
   }
 ]
